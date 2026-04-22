@@ -1,0 +1,309 @@
+/* ============================================
+   1. VARIABLES CSS - Colores y estilos globales
+   ============================================ */
+:root {
+    --color-cyan-neon: #00ffff;
+    --color-green-neon: #00ff88;
+    --color-blue-dark: #020b14;
+    --color-blue-darker: #010611;
+    --color-white: #ffffff;
+    --color-gray-light: #c0c0c0;
+    --color-gray-medium: #808080;
+    --font-glitch: 'Orbitron', sans-serif;
+    --font-clean: 'Montserrat', sans-serif;
+    --transition: 0.3s ease;
+}
+
+/* ============================================
+   2. RESET Y ESTILOS GLOBALES
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-clean);
+    background-color: var(--color-blue-dark);
+    background-image: url('pagina 1/FONDO.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--color-white);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 0;
+}
+
+/* ============================================
+   3. CONTENEDOR PRINCIPAL - Mobile First 9:16 (430x932)
+   ============================================ */
+.container {
+    width: 430px;
+    height: 932px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-image: url('pagina 1/FONDO.png');
+    /* background-color: rgba(2, 11, 20, 0.9); */
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    overflow: hidden;
+}
+
+/* ============================================
+   4. HEADER - Cabecera con menú hamburguesa
+   ============================================ */
+.header {
+    padding: 15px 20px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    background: rgba(2, 11, 20, 0.8);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    flex-shrink: 0;
+}
+
+.hamburger-btn {
+    background: none;
+    border: none;
+    color: var(--color-gray-light);
+    font-size: 24px;
+    cursor: pointer;
+    transition: color var(--transition);
+    padding: 5px;
+}
+
+.hamburger-btn:hover {
+    color: var(--color-cyan-neon);
+    text-shadow: 0 0 10px var(--color-cyan-neon);
+}
+
+/* ============================================
+   5. MAIN CONTENT - Contenido central
+   ============================================ */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 20px;
+    text-align: center;
+    gap: 25px;
+    overflow-y: auto;
+}
+
+/* Título principal - GUARDIANES DE LA IDENTIDAD */
+.main-title {
+    font-family: var(--font-glitch);
+    font-size: 32px;
+    font-weight: 900;
+    color: var(--color-cyan-neon);
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-shadow: 
+        0 0 10px var(--color-cyan-neon),
+        0 0 20px var(--color-cyan-neon),
+        0 0 30px rgba(0, 255, 255, 0.5);
+    animation: glitch-flicker 0.15s infinite;
+}
+
+@keyframes glitch-flicker {
+    0%, 100% {
+        text-shadow: 
+            0 0 10px var(--color-cyan-neon),
+            0 0 20px var(--color-cyan-neon),
+            0 0 30px rgba(0, 255, 255, 0.5);
+    }
+    50% {
+        text-shadow: 
+            0 0 5px var(--color-cyan-neon),
+            0 0 15px rgba(0, 255, 255, 0.3);
+    }
+}
+
+/* Imagen central - Escudo IA */
+.central-image {
+    width: 40%;
+    max-width: 150px;
+    height: auto;
+    object-fit: contain;
+    filter: drop-shadow(0 0 15px var(--color-cyan-neon));
+    transition: transform var(--transition), filter var(--transition);
+}
+
+.central-image:hover {
+    transform: scale(1.05) rotateZ(2deg);
+    filter: drop-shadow(0 0 25px var(--color-cyan-neon));
+}
+
+/* Subtítulo */
+.subtitle {
+    font-size: 14px;
+    color: var(--color-gray-light);
+    font-weight: 300;
+    line-height: 1.5;
+    letter-spacing: 0.5px;
+    margin: 10px 0;
+}
+
+/* ============================================
+   6. BOTÓN PRINCIPAL - Inicio de Sesión
+   ============================================ */
+.primary-button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px;
+    background-color: rgba(2, 11, 20, 0.6);
+    border: 2px solid var(--color-cyan-neon);
+    border-radius: 8px;
+    color: var(--color-cyan-neon);
+    font-family: var(--font-glitch);
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: 
+        0 0 15px var(--color-cyan-neon),
+        inset 0 0 15px rgba(0, 255, 255, 0.1);
+    transition: all var(--transition);
+    gap: 10px;
+    width: 100%;
+    max-width: 280px;
+}
+
+.primary-button:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    box-shadow: 
+        0 0 25px var(--color-cyan-neon),
+        inset 0 0 25px rgba(0, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+    box-shadow: 
+        0 0 15px var(--color-cyan-neon),
+        inset 0 0 15px rgba(0, 255, 255, 0.15);
+}
+
+.button-text {
+    flex: 1;
+    text-align: left;
+}
+
+.button-icon {
+    font-size: 16px;
+}
+
+/* ============================================
+   7. FOOTER - Barra inferior con 3 botones
+   ============================================ */
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 15px 10px;
+    background-color: rgba(2, 11, 20, 0.85);
+    border-top: 1px solid rgba(0, 255, 255, 0.2);
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.footer-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 12px 16px;
+    background-color: rgba(2, 11, 20, 0.7);
+    border: 1px solid rgba(0, 255, 255, 0.6);
+    border-radius: 20px;
+    color: var(--color-cyan-neon);
+    font-family: var(--font-clean);
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition);
+    letter-spacing: 0.5px;
+    flex: 1;
+}
+
+.footer-button:hover {
+    background-color: rgba(0, 255, 255, 0.1);
+    border-color: var(--color-cyan-neon);
+    box-shadow: 0 0 12px rgba(0, 255, 255, 0.5);
+    transform: translateY(-2px);
+}
+
+.footer-button:active {
+    transform: translateY(0);
+}
+
+.footer-button i {
+    font-size: 18px;
+}
+
+.footer-button-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+    filter: brightness(1.2);
+}
+
+/* ============================================
+   8. RESPONSIVE - Ajustes para pantallas grandes
+   ============================================ */
+@media (min-width: 1200px) {
+    body {
+        background-size: cover;
+    }
+
+    .container {
+        border: 2px solid rgba(0, 255, 255, 0.3);
+        border-radius: 20px;
+    }
+}
+
+/* ============================================
+   9. ANIMACIONES Y EFECTOS ADICIONALES
+   ============================================ */
+@keyframes pulse-glow {
+    0%, 100% {
+        box-shadow: 0 0 15px var(--color-cyan-neon);
+    }
+    50% {
+        box-shadow: 0 0 25px var(--color-cyan-neon);
+    }
+}
+
+.pulse {
+    animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Scrollbar personalizada */
+.main-content::-webkit-scrollbar {
+    width: 6px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: rgba(0, 255, 255, 0.1);
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: var(--color-cyan-neon);
+    border-radius: 3px;
+}
+
+.main-content::-webkit-scrollbar-thumb:hover {
+    background: var(--color-green-neon);
+}
