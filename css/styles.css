@@ -26,7 +26,7 @@
 body {
     font-family: var(--font-clean);
     background-color: var(--color-blue-dark);
-    background-image: url('pagina 1/FONDO.png');
+    background-image: url('src/img_p1/FONDO.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -48,7 +48,7 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-image: url('pagina 1/FONDO.png');
+    background-image: url('src/img_p1/FONDO.png');
     /* background-color: rgba(2, 11, 20, 0.9); */
     box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
     overflow: hidden;
