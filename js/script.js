@@ -11,7 +11,7 @@ document.getElementById('hamburger-btn').addEventListener('click', function() {
 // Botón Login/Inicio de Sesión Segura
 document.getElementById('login-btn').addEventListener('click', function() {
     console.log('✓ Botón INICIA SESIÓN SEGURA presionado');
-    window.location.href = 'pagina2.html';
+    // Aquí puedes agregar la lógica de login
 });
 
 // Botón SECURE
