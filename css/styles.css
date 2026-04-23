@@ -2,7 +2,7 @@
    1. VARIABLES CSS - Colores y estilos globales
    ============================================ */
 :root {
-    --color-cyan-neon: #00ffff;
+    --color-cyan-neon: #87f7f7;
     --color-green-neon: #00ff88;
     --color-blue-dark: #020b14;
     --color-blue-darker: #010611;
@@ -11,6 +11,7 @@
     --color-gray-medium: #808080;
     --font-glitch: 'Orbitron', sans-serif;
     --font-clean: 'Montserrat', sans-serif;
+    --font-main-title: 'Montserrat', sans-serif;
     --transition: 0.3s ease;
 }
 
@@ -133,18 +134,46 @@ body {
 
 /* Título principal - GUARDIANES DE LA IDENTIDAD */
 .main-title {
-    font-family: var(--font-glitch);
+    font-family: var(--font-main-title);
     font-size: 32px;
     font-weight: 900;
     color: var(--color-cyan-neon);
     text-transform: uppercase;
-    line-height: 1.2;
+    line-height: 1;
     letter-spacing: 2px;
-    text-shadow: 
-        0 0 10px var(--color-cyan-neon),
-        0 0 20px var(--color-cyan-neon),
-        0 0 30px rgba(0, 255, 255, 0.5);
-    animation: glitch-flicker 0.15s infinite;
+    position: relative; /* Necesario para los clones */
+    display: inline-block;
+    
+    /* Resplandor base */
+    text-shadow: 0 0 10px var(--color-cyan-neon);
+}
+
+/* Los clones que crearán el efecto de falla */
+.main-title::before,
+.main-title::after {
+    content: "GUARDIANES DE \A LA IDENTIDAD"; /* \A es el salto de línea en CSS */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    white-space: pre; /* Para que respete el salto de línea del content */
+}
+
+/* Capa roja/fucsia que se desplaza a la izquierda */
+.main-title::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+
+/* Capa azul/verde que se desplaza a la derecha */
+.main-title::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 1s infinite linear alternate-reverse;
 }
 
 @keyframes glitch-flicker {
@@ -159,6 +188,26 @@ body {
             0 0 5px var(--color-cyan-neon),
             0 0 15px rgba(0, 255, 255, 0.3);
     }
+}
+
+/* Animación de desplazamiento y recorte aleatorio */
+@keyframes glitch-anim {
+  0% { clip: rect(31px, 9999px, 94px, 0); transform: skew(0.85deg); }
+  5% { clip: rect(70px, 9999px, 71px, 0); transform: skew(0.1deg); }
+  10% { clip: rect(29px, 9999px, 83px, 0); transform: skew(0.5deg); }
+  15% { clip: rect(16px, 9999px, 91px, 0); transform: skew(0.2deg); }
+  20% { clip: rect(2px, 9999px, 23px, 0); transform: skew(0.9deg); }
+  /* ... puedes añadir más pasos para que sea más errático ... */
+  100% { clip: rect(67px, 9999px, 62px, 0); transform: skew(0.1deg); }
+}
+
+@keyframes glitch-anim2 {
+  0% { clip: rect(65px, 9999px, 100px, 0); transform: skew(1deg); }
+  20% { clip: rect(10px, 9999px, 30px, 0); transform: skew(0.5deg); }
+  40% { clip: rect(40px, 9999px, 50px, 0); transform: skew(1.5deg); }
+  60% { clip: rect(80px, 9999px, 90px, 0); transform: skew(0.2deg); }
+  80% { clip: rect(15px, 9999px, 25px, 0); transform: skew(0.8deg); }
+  100% { clip: rect(50px, 9999px, 70px, 0); transform: skew(1deg); }
 }
 
 /* Imagen central - Escudo IA */
@@ -178,7 +227,7 @@ body {
 
 /* Subtítulo */
 .subtitle {
-    font-size: 14px;
+    font-size: 20px;
     color: var(--color-gray-light);
     font-weight: 300;
     line-height: 1.5;
@@ -192,51 +241,63 @@ body {
 .primary-button {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 15px 30px;
-    background-color: rgba(2, 11, 20, 0.6);
-    border: 2px solid var(--color-cyan-neon);
-    border-radius: 8px;
-    color: var(--color-cyan-neon);
+    justify-content: center; /* Centramos el texto si quitamos el icono de Font Awesome */
+    
+    /* --- NUEVO FONDO DE IMAGEN --- */
+    background-image: url('../src/img_p1/boton.png'); /* Pon aquí la ruta correcta a tu imagen */
+    background-size: 108% 130%; /* Estira la imagen para que encaje perfectamente en el tamaño del botón */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: transparent; /* Quitamos el fondo sólido */
+    
+    /* Quitamos bordes y radios porque la imagen ya los trae dibujados */
+    border: none; 
+    border-radius: 0; 
+
+    /* Ajustes de tamaño y padding para respetar los bordes metálicos de la imagen */
+    padding: 20px 40px; 
+    width: 100%;
+    max-width: 320px; /* Un poco más ancho para que la proporción de la imagen se vea mejor */
+    min-height: 80px; /* Le damos una altura mínima para que la imagen no se aplaste */
+
+    /* Tipografía */
+    color: #aaffee; /* Te sugiero un tono más verdoso/cian brillante para que combine con el fondo */
     font-family: var(--font-glitch);
     font-size: 14px;
     font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 2px;
     cursor: pointer;
-    box-shadow: 
-        0 0 15px var(--color-cyan-neon),
-        inset 0 0 15px rgba(0, 255, 255, 0.1);
+    
+    /* Efecto de resplandor exterior (modificado para quitar el 'inset' que ya no hace falta) */
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.4); /* Resplandor verde exterior */
     transition: all var(--transition);
-    gap: 10px;
-    width: 100%;
-    max-width: 280px;
+    
 }
 
 .primary-button:hover {
-    background-color: rgba(0, 255, 255, 0.1);
-    box-shadow: 
-        0 0 25px var(--color-cyan-neon),
-        inset 0 0 25px rgba(0, 255, 255, 0.2);
+    /* Al pasar el ratón, aumentamos el resplandor exterior y hacemos el efecto de pulsar */
+    box-shadow: 0 0 25px rgba(0, 255, 128, 0.7);
     transform: translateY(-2px);
+    filter: brightness(1.2); /* Un truco excelente: ilumina la imagen del fondo al hacer hover */
 }
 
 .primary-button:active {
     transform: translateY(0);
-    box-shadow: 
-        0 0 15px var(--color-cyan-neon),
-        inset 0 0 15px rgba(0, 255, 255, 0.15);
+    box-shadow: 0 0 15px rgba(0, 255, 128, 0.4);
+    filter: brightness(1);
+}
+
+/* Ocultamos el icono de Font Awesome para que no choque con la flecha dibujada de la imagen */
+.button-icon {
+    display: none; 
 }
 
 .button-text {
     flex: 1;
-    text-align: left;
+    text-align: center; /* Centramos el texto dentro del botón */
+    text-shadow: 0 0 8px rgba(0, 255, 128, 0.8); /* Le da un toque neón al texto */
 }
-
-.button-icon {
-    font-size: 16px;
-}
-
 /* ============================================
    7. FOOTER - Barra inferior con 3 botones
    ============================================ */
@@ -253,7 +314,7 @@ body {
 
 .footer-button {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 6px;
@@ -341,3 +402,5 @@ body {
 .main-content::-webkit-scrollbar-thumb:hover {
     background: var(--color-green-neon);
 }
+
+
