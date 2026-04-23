@@ -25,8 +25,8 @@
 
 body {
     font-family: var(--font-clean);
+    background-image: url(../src/img_p1/FONDO.png);
     background-color: var(--color-blue-dark);
-    background-image: url('src/img_p1/FONDO.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -48,25 +48,57 @@ body {
     display: flex;
     flex-direction: column;
     position: relative;
-    background-image: url('src/img_p1/FONDO.png');
-    /* background-color: rgba(2, 11, 20, 0.9); */
-    box-shadow: 0 0 30px rgba(0, 255, 255, 0.3);
+    background-image: url('../src/img_p1/FONDO.png');
+    /* background-color: rgba(86, 141, 195, 0.9); */
+    box-shadow: 0 0 30px rgba(72, 143, 143, 0.3);
     overflow: hidden;
 }
 
 /* ============================================
-   4. HEADER - Cabecera con menú hamburguesa
+   4. HEADER - Cabecera con menú hamburguesa e iOS Status Bar
    ============================================ */
+
+/* Contenedor principal */
 .header {
-    padding: 15px 20px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+    /* Tus estilos visuales originales */
     background: rgba(2, 11, 20, 0.8);
     border-bottom: 1px solid rgba(0, 255, 255, 0.2);
     flex-shrink: 0;
+    
+    /* Modificado para apilar la barra de estado y el menú */
+    display: flex;
+    flex-direction: column; 
+    padding: 10px 0; /* Quitamos el padding lateral general para manejarlo por fila */
 }
 
+/* --- NUEVO: Barra de estado (Hora y Batería) --- */
+.status-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px 10px 20px; /* Añadimos el padding lateral aquí. 10px de margen inferior */
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--color-gray-light, #a0b0b9); /* Usamos tu variable o un gris claro por defecto */
+}
+
+.status-icons {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+    font-size: 13px;
+}
+
+/* --- Contenedor del botón hamburguesa --- */
+.header-bottom {
+    display: flex;
+    justify-content: flex-start; /* Alinea el botón a la izquierda como querías originalmente */
+    align-items:center;
+    padding: 0 20px; /* Mantiene tus 20px de padding lateral originales */
+}
+
+/* Tus estilos del botón de hamburguesa INTACTOS */
 .hamburger-btn {
     background: none;
     border: none;
@@ -75,6 +107,8 @@ body {
     cursor: pointer;
     transition: color var(--transition);
     padding: 5px;
+    align-self: flex-start; 
+    margin-left: 15px;
 }
 
 .hamburger-btn:hover {
