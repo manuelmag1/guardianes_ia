@@ -594,3 +594,19 @@ body {
     left: 2%;
     filter: drop-shadow(0 0 5px #a9257e);
 }
+
+.decor-burst-green {
+    position: absolute;
+    width: 150px; /* Cambia el tamaño aquí */
+    top: -300px;
+    right: 0%;
+    filter: drop-shadow(0 0 8px #a5ea75); /* Brillo verde */
+}
+
+.decor-burst-purple {
+    position: absolute;
+    width: 150px; /* Cambia el tamaño aquí */
+    top: -300px;
+    right: 0%;
+    transform: rotate(2deg); /* Puedes girarla un poco si quieres */
+}
