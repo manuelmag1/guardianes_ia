@@ -404,3 +404,193 @@ body {
 }
 
 
+/* ============================================
+   10. ESTILOS PÁGINA 5 - MISIÓN COMPLETADA
+   ============================================ */
+
+.mission-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    height: 100%;
+    gap: 30px;
+    padding-top: 150px;
+}
+
+/* Gráfico del Título */
+.mission-header-graphic {
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.mission-title {
+    font-family: var(--font-main-title);
+    font-size: 55px;
+    font-weight: 900;
+    color: var(--color-white);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: -3px 0px 0px rgba(0, 255, 255, 0.8), 3px 0px 0px rgba(255, 0, 193, 0.6);
+    line-height: 1;
+    margin-bottom: 5px;
+}
+
+.mission-subtitle {
+    font-family: var(--font-main-title);
+    font-size: 28px;
+    font-weight: 900;
+    color: var(--color-cyan-neon);
+    text-transform: uppercase;
+    letter-spacing: 5px;
+}
+
+.glitch-line {
+    position: absolute;
+    top: 55%;
+    left: -10%;
+    width: 120%;
+    height: 3px;
+    background-color: var(--color-cyan-neon);
+    box-shadow: 0 0 10px var(--color-cyan-neon);
+    z-index: 2;
+    opacity: 0.8;
+}
+
+/* Caja de Texto */
+.mission-text-box {
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 30px;
+}
+
+.mission-text-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--color-white);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+}
+
+.mission-text-box p {
+    font-size: 20px;
+    font-weight: 300;
+    color: var(--color-gray-light);
+    line-height: 1.4;
+}
+
+/* Contenedor de Botones Centrales */
+.mission-action-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 50px;
+}
+
+/* Botón "COMPARTE A TUS AMIGOS" */
+.btn-bracket-style {
+    background: rgba(2, 11, 20, 0.5);
+    border: none;
+    border-left: 3px solid var(--color-cyan-neon);
+    border-right: 3px solid var(--color-cyan-neon);
+    color: var(--color-white);
+    font-family: var(--font-clean);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 15px 20px;
+    width: 90%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 10px 0 20px -15px var(--color-cyan-neon), 
+                inset -10px 0 20px -15px var(--color-cyan-neon);
+    transition: var(--transition);
+}
+
+.btn-bracket-style2 {
+    background: rgba(2, 11, 20, 0.5);
+    border: none;
+    border-left: 3px solid var(--color-cyan-neon);
+    border-right: 3px solid var(--color-cyan-neon);
+    color: var(--color-white);
+    font-family: var(--font-clean);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 15px 20px;
+    width: 90%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    box-shadow: inset 10px 0 20px -15px var(--color-cyan-neon), 
+                inset -10px 0 20px -15px var(--color-cyan-neon);
+    transition: var(--transition);
+}
+
+.btn-bracket-style:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: inset 15px 0 25px -15px var(--color-cyan-neon), 
+                inset -15px 0 25px -15px var(--color-cyan-neon);
+}
+
+/* Botón de Compartir (Icono grande) */
+.btn-glow-box {
+    background: linear-gradient(180deg, rgba(0, 255, 255, 0.15) 0%, rgba(2, 11, 20, 0.8) 100%);
+    border: 1px solid rgba(0, 255, 255, 0.4);
+    border-radius: 12px;
+    color: var(--color-cyan-neon);
+    font-size: 35px;
+    padding: 15px 70px;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2), inset 0 0 15px rgba(0, 255, 255, 0.1);
+    transition: var(--transition);
+}
+
+.btn-glow-box:hover {
+    box-shadow: 0 0 30px rgba(0, 255, 255, 0.4), inset 0 0 20px rgba(0, 255, 255, 0.3);
+    transform: scale(1.05);
+}
+
+.btn-glow-box i {
+    filter: drop-shadow(0 0 8px var(--color-cyan-neon));
+}
+
+/* ============================================
+   11. DECORACIONES (ESTRELLAS Y EXPLOSIÓN)
+   ============================================ */
+.decorations-container {
+    position: absolute;
+    top: 200px;
+    left: -3%;
+    width: 20%;
+    height: 20%;
+    rotate: 90deg;
+    pointer-events: none; /* Para que no se puedan clickear */
+    z-index: 0; /* Manda las figuras detrás del texto */
+}
+/* Elevamos un poco el texto para que esté sobre las figuras */
+.mission-title, .mission-subtitle {
+    position: relative;
+    z-index: 2;
+}
+
+.decor-star-green-lg {
+    width: 45px;
+    top: -5px;
+    left: 8%;
+    filter: drop-shadow(0 0 8px #88ff00);
+}
+.decor-star-green-sm {
+    width: 25px;
+    top: 55px;
+    left: 18%;
+    filter: drop-shadow(0 0 5px #88ff00);
+}
+.decor-star-purple {
+    width: 20px;
+    top: 40px;
+    left: 2%;
+    filter: drop-shadow(0 0 5px #a9257e);
+}

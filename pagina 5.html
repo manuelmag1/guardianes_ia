@@ -1,21 +1,25 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guardianes de la Identidad - Sistema de Ciberseguridad</title>
-    
+
     <!-- Google Fonts: Orbitron (estilo glitch/técnico) y Montserrat (limpio) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link
+        href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
     <!-- FontAwesome CDN para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
     <div class="container">
         <!-- =============== HEADER =============== -->
@@ -35,10 +39,43 @@
 
         <!-- =============== MAIN CONTENT =============== -->
         <main class="main-content">
-            <!-- Título Principal -->
-            <h1 class="main-title">
-                EDITAN AQUI
-            </h1>
+            <div class="mission-wrapper">
+                <div class="decorations-container">
+                    <svg class="decor-star decor-star-green-lg" viewBox="0 0 100 100"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 0 Q50 50 100 50 Q50 50 50 100 Q50 50 0 50 Q50 50 50 0 Z" fill="#88ff00" />
+                    </svg>
+                    <svg class="decor-star decor-star-green-sm" viewBox="0 0 100 100"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 0 Q50 50 100 50 Q50 50 50 100 Q50 50 0 50 Q50 50 50 0 Z" fill="#88ff00" />
+                    </svg>
+                    <svg class="decor-star decor-star-purple" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M50 0 Q50 50 100 50 Q50 50 50 100 Q50 50 0 50 Q50 50 50 0 Z" fill="#a9257e" />
+                    </svg>
+
+                </div>
+
+                <div class="mission-header-graphic">
+                    <h1 class="mission-title">MISIÓN</h1>
+                    <h2 class="mission-subtitle">COMPLETADA</h2>
+                    <div class="glitch-line"></div>
+                </div>
+
+                <div class="mission-text-box">
+                    <h3>¡Felicidades, Guardianes!</h3>
+                    <p>Has protegido los datos y<br>completado la experiencia.</p>
+                </div>
+
+                <div class="mission-action-buttons">
+                    <button id="btn-share-text" class="btn-bracket-style2">COMPARTE A TUS AMIGOS</button>
+
+                    <button id="btn-share-icon" class="btn-glow-box">
+                        <i class="fas fa-share-nodes"></i>
+                    </button>
+                </div>
+
+
+            </div>
         </main>
 
         <!-- =============== FOOTER =============== -->
@@ -66,4 +103,5 @@
     <!-- =============== JAVASCRIPT =============== -->
     <script src="js/script.js"></script>
 </body>
+
 </html>
