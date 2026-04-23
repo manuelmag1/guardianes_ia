@@ -594,3 +594,69 @@ body {
     left: 2%;
     filter: drop-shadow(0 0 5px #a9257e);
 }
+
+
+
+/* ============================================
+   10. ESTILO PÁGINA 2 - SISTEMA CENTRAL
+   ============================================ */
+   
+   .grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+}
+
+.card {
+  padding: 15px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+.card h2 {
+  font-size: 18px;
+}
+
+.card button {
+  margin-top: 10px;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.card-blue { background: #005f73; }
+.card-yellow { background: #e9c46a; color: black; }
+.card-green { background: #2a9d8f; }
+.card-orange { background: #f4a261; }
+
+.nav-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn {
+  background: #001f2f;
+  padding: 10px;
+  border-radius: 5px;
+  color: white;
+  text-decoration: none;
+}
+
+/* POPUPS */
+.popup {
+  position: fixed;
+  bottom: -300px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  background: white;
+  color: black;
+  padding: 15px;
+  border-radius: 15px;
+  transition: 0.5s;
+}
+
+.popup.active {
+  bottom: 20px;
+}
