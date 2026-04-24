@@ -600,78 +600,160 @@ body {
 /* ============================================
    10. ESTILO PÁGINA 2 - SISTEMA CENTRAL
    ============================================ */
+
+.title-p2 {
+    font-family: 'Orbitron', sans-serif;
+    text-align: center;
+    color: #22d3ee; 
+    margin-top: 0px;
+    margin-bottom: 0px;
+    text-transform: uppercase;
+    position: relative;
+    z-index: 10;
+    animation: none;
+}
+
+.title-p2::before, 
+.title-p2::after {
+    content: none;
+    display: none;
+}
+
+.title-p2 span {
+    font-size: 14px;
+    color: white;
+    display: block;
+    margin-top: px;
+}
    
-   .grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 15px;
+   * { margin: 0; padding: 0; box-sizing: border-box; }
+:root {
+    --bg-gradient: linear-gradient(180deg, #050a0f 0%, #0a1929 100%);
+    --font-tech: 'Orbitron', sans-serif;
+    --font-main: 'Montserrat', sans-serif;
+    --accent-blue: #6ec4d1;
 }
 
-.card {
-  padding: 15px;
-  border-radius: 12px;
-  cursor: pointer;
+body { background: #000; display: flex; justify-content: center; font-family: var(--font-main); color: white; min-height: 100vh; }
+
+.container {
+    width: 100%; 
+    max-width: 375px; 
+    height: 812px;
+    position: relative;
+    display: flex; 
+    flex-direction: column; 
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
 }
 
-.card h2 {
-  font-size: 18px;
+/* HEADER */
+.header { padding: 10px 15px; }
+.status-bar { display: flex; justify-content: space-between; font-size: px; opacity: 0.7; margin-bottom: 5px; }
+.hamburger-btn { background: none; border: none; color: white; font-size: 20px; cursor: pointer; }
+.main-content { flex: 1; padding: 0 20px; text-align: center; display: flex; flex-direction: column; justify-content: flex-start; padding-top: 30px; }
+.main-title { font-family: var(--font-tech); font-size: 23px; margin-top: 15px; margin-bottom: 20px; text-transform: uppercase; }
+.main-title span { font-size: 16px; color: var(--accent-blue); display: block; margin-top: 9px; }
+
+/* GRID */
+.mission-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 15px; }
+.mission-card {
+    border-radius: 12px; padding: 14px; height: 172px;
+    display: flex; flex-direction: column; justify-content: space-between;
+    text-align: left; border: 1px solid rgba(255,255,255,0.1);
+}
+.card-teal { background: #133e44; }
+.card-orange { background: #5c3413; }
+.card-green { background: #1e4128; }
+.card-yellow { background: #66581a; }
+
+.card-header { display: flex; justify-content: space-between; }
+.card-icon { width: 100px; height: 55px; object-fit: contain; }
+.mission-card h3 { font-size: 12px; font-family: var(--font-tech); margin: px 0; }
+.mission-card p { font-size: 11px; opacity: 0.8; line-height: 1.2; }
+
+.action-btn {
+    background: rgba(255,255,255,0.15); 
+    border: 1px solid rgba(255,255,255,0.3);
+    color: white; 
+    padding: 7%; 
+    border-radius: 6px; 
+    font-size: 10px; 
+    cursor: pointer; 
+    text-transform: uppercase;
+}
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.9); 
+    color: #000; 
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5); 
+    border-color: #ffffff; 
+    transform: translateY(-2px);
 }
 
-.card button {
-  margin-top: 10px;
-  border: none;
-  padding: 5px 10px;
-  border-radius: 5px;
+/* NAVEGACIÓN NEUMÓRFICA Y BRILLANTE */
+.neumorphic-nav {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+    padding-bottom: 20px;
 }
 
-.card-blue { background: #005f73; }
-.card-yellow { background: #e9c46a; color: black; }
-.card-green { background: #2a9d8f; }
-.card-orange { background: #f4a261; }
-
-.nav-buttons {
-  margin-top: 20px;
-  display: flex;
-  justify-content: space-between;
+.nav-btn {
+    flex: 0 1 47%;
+    height: 50px;
+    background: rgba(10, 20, 30, 0.7);
+    border: 1px solid rgba(34, 211, 238, 0.2);
+    border-radius: 15px;
+    color: white;
+    font-family: var(--font-tech);
+    font-size: 11px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex; align-items: center; justify-content: center; gap: 8px;
 }
 
-.btn {
-  background: #001f2f;
-  padding: 10px;
-  border-radius: 5px;
-  color: white;
-  text-decoration: none;
+.nav-btn:hover {
+   background: var(--accent-blue); 
+    color: #fdf8f8;
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.6); 
+    transform: translateY(-3px);
 }
 
-/* POPUPS */
-.popup {
-  position: fixed;
-  bottom: -300px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 90%;
-  background: white;
-  color: black;
-  padding: 15px;
-  border-radius: 15px;
-  transition: 0.5s;
+.nav-btn.next {
+    color: white;
 }
 
-.popup.active {
-  bottom: 20px;
-.decor-burst-green {
-    position: absolute;
-    width: 150px; /* Cambia el tamaño aquí */
-    top: -300px;
-    right: 0%;
-    filter: drop-shadow(0 0 8px #a5ea75); /* Brillo verde */
+/* MODALES */
+.modal-overlay {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.85); display: none;
+    justify-content: center; align-items: center; z-index: 1000;
 }
 
-.decor-burst-purple {
-    position: absolute;
-    width: 150px; /* Cambia el tamaño aquí */
-    top: -300px;
-    right: 0%;
-    transform: rotate(2deg); /* Puedes girarla un poco si quieres */
+.modal-content {
+    background: white; width: 85%; border-radius: 20px; padding: 25px;
+    position: relative; text-align: center; color: #333; display: flex; flex-direction: column; align-items: center;
 }
-  
+
+.close-modal { position: absolute; top: 19px; right: 12px; background: none; border: none; cursor: pointer; }
+.close-modal img { width: 35px; }
+.close-modal:hover img { transform: scale(1.2); filter: brightness(1.2);}
+.pop-icon { width: 70px; margin-bottom: 10px; }
+.pop-text { font-size: 14px; color: #444; margin: 10px 0; line-height: 1.4; }
+
+.pop-banner { padding: 14px; border-radius: 8px; color: white; font-weight: bold; font-size: 11px; margin-top: 20px; }
+.banner-blue { background: #2297ad; }
+.banner-orange { background: #d97706; }
+.banner-green { background: #15803d; }
+.banner-yellow { background: #a16207; }
+
+/* FOOTER */
+.footer { height: 75px; display: flex; justify-content: space-around; align-items: center; background: rgba(0,0,0,0.6); border-top: 1px solid rgba(255,255,255,0.1); }
+.footer-button { background: none; border: none; color: white; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.footer-button-icon { width: 22px; }
+.footer-button span { font-size: 9px; font-family: var(--font-tech); }
+
+
+
