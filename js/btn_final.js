@@ -29,15 +29,3 @@ document.getElementById('hamburger-btn').addEventListener('click', function() {
     window.location.href = 'index.html';
     // Aquí puedes agregar la lógica del menú más adelante
 });
-
-// ============================================
-// NAVEGACIÓN FOOTER - PÁGINA 2
-// ============================================
-
-function abrir(id) {
-  document.getElementById(id).classList.add('active');
-}
-
-function cerrar(id) {
-  document.getElementById(id).classList.remove('active');
-}

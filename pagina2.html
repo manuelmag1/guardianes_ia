@@ -3,108 +3,116 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sistema Central</title>
-
-    <!-- Fonts -->
+    <title>Guardianes de la Identidad - Sistema de Ciberseguridad</title>
+    
+    <!-- Google Fonts: Orbitron (estilo glitch/técnico) y Montserrat (limpio) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-    <!-- Icons -->
+    <!-- FontAwesome CDN para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- CSS -->
+    
+    <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="css/styles.css">
-</head>
+</head> <body>
+    <div class="container">
+        <header class="header">
+            <div class="status-bar">
+                <div class="time">9:41</div>
+                <div class="status-icon">
+                    <i class="fas fa-signal"></i> <i class="fas fa-wifi"></i> <i class="fas fa-battery-full"></i>
+                </div>
+            </div>
+            <button class="hamburger-btn"><i class="fas fa-bars"></i></button>
+        </header>
 
-<body>
+        <main class="main-content">
+            <h1 class="title-p2">SISTEMA CENTRAL:<br><span>SELECCIONA TU MISIÓN</span></h1>
 
-<div class="container">
+            <div class="mission-grid">
+                <div class="mission-card card-teal">
+                    <div class="card-header"><span class="card-number">01</span><img src="src/img_p2/imgIA1.png" class="card-icon"></div>
+                    <h3>LA TRAMPA DE LA IA</h3>
+                    <p>Riesgos invisibles y manipulación cognitiva.</p>
+                    <button class="action-btn" onclick="openModal('modal-1')">VER EJEMPLO</button>
+                </div>
 
-    <!-- HEADER -->
-    <header class="header">
-        <button class="hamburger-btn">
-            <i class="fas fa-bars"></i>
-        </button>
-    </header>
+                <div class="mission-card card-orange">
+                    <div class="card-header"><span class="card-number">02</span><img src="src/img_p2/imgCasos2.png" class="card-icon"></div>
+                    <h3>CASOS DE ESTUDIO</h3>
+                    <p>Analiza situaciones reales de suplantación.</p>
+                    <button class="action-btn" onclick="openModal('modal-2')">CASO REAL</button>
+                </div>
 
-    <!-- MAIN -->
-    <main class="main-content">
+                <div class="mission-card card-green">
+                    <div class="card-header"><span class="card-number">03</span><img src="src/img_p2/imgPractica3.png" class="card-icon"></div>
+                    <h3>PRÁCTICA: PERFIL</h3>
+                    <p>Ejercicios para tus defensas digitales.</p>
+                    <button class="action-btn" onclick="openModal('modal-3')">TIP RÁPIDO</button>
+                </div>
 
-        <h1 class="main-title">
-            SISTEMA CENTRAL:<br>
-            <span>SELECCIONA TU MISIÓN</span>
-        </h1>
-
-        <!-- GRID -->
-        <div class="grid">
-
-            <div class="card card-blue" onclick="abrir('popup1')">
-                <h2>01</h2>
-                <p>LA TRAMPA DE LA IA</p>
-                <button>VER EJEMPLO</button>
+                <div class="mission-card card-yellow">
+                    <div class="card-header"><span class="card-number">04</span><img src="src/img_p2/imgPrevencion4.png" class="card-icon"></div>
+                    <h3>PREVENCIÓN</h3>
+                    <p>Guía de seguridad y protocolos diarios.</p>
+                    <button class="action-btn" onclick="openModal('modal-4')">TIP RÁPIDO</button>
+                </div>
             </div>
 
-            <div class="card card-yellow" onclick="abrir('popup2')">
-                <h2>02</h2>
-                <p>CASOS DE ESTUDIO DE IDENTIDAD</p>
-                <button>VER CASO</button>
+            <p class="tagline">Protege tus datos en la era de la IA</p>
+
+            <div class="flow-nav neumorphic-nav">
+                <button class="nav-btn btn-inicio" onclick="location.href='index.html'">
+                    <i class="fas fa-chevron-left"></i> INICIO
+                </button>
+                <button class="nav-btn next btn-siguiente" onclick="location.href='pagina3.html'">
+                    SIGUIENTE <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </main>
+
+        <footer class="footer">
+            <button class="footer-button"><img src="src/img_p1/CANDADO.png" class="footer-button-icon"><span>SECURE</span></button>
+            <button class="footer-button"><img src="src/img_p1/IA ICONO.png" class="footer-button-icon"><span>IA INTEL</span></button>
+            <button class="footer-button"><img src="src/img_p1/AYUDA.png" class="footer-button-icon"><span>AYUDA</span></button>
+        </footer>
+
+        <div id="modal-overlay" class="modal-overlay">
+            <div id="modal-1" class="modal-content">
+                <button class="close-modal" onclick="closeModal()"><img src="src/img_p2/iconoCerrar.png"></button>
+                <img src="src/img_p2/imgPop1.png" class="pop-icon">
+                <h2 class="pop-title-blue">¿TE HA PASADO?</h2>
+                <p class="pop-text">A veces confiamos en la IA sin pensar. Puede parecer útil... pero también puede manipular información.</p>
+                <div class="pop-banner banner-blue">NO TODO LO QUE VES ES VERDAD</div>
             </div>
 
-            <div class="card card-green" onclick="abrir('popup3')">
-                <h2>03</h2>
-                <p>PRÁCTICA: PROTEGE TU PERFIL</p>
-                <button>TIP RÁPIDO</button>
+            <div id="modal-2" class="modal-content">
+                <button class="close-modal" onclick="closeModal()"><img src="src/img_p2/iconoCerrar.png"></button>
+                <img src="src/img_p2/imgPop2.png" class="pop-icon">
+                <h2 class="pop-title-orange">CASO REAL</h2>
+                <p class="pop-text">Un usuario compartió su correo en un chatbot... días después recibió mensajes falsos.</p>
+                <div class="pop-banner banner-orange">TODO EMPEZÓ CON UN PEQUEÑO DATO</div>
             </div>
 
-            <div class="card card-orange" onclick="abrir('popup4')">
-                <h2>04</h2>
-                <p>PREVENCIÓN Y BUENAS PRÁCTICAS</p>
-                <button>TIP RÁPIDO</button>
+            <div id="modal-3" class="modal-content">
+                <button class="close-modal" onclick="closeModal()"><img src="src/img_p2/iconoCerrar.png"></button>
+                <img src="src/img_p2/imgPop3.png" class="pop-icon">
+                <h2 class="pop-title-green">TIP RÁPIDO</h2>
+                <p class="pop-text">Activa la verificación en dos pasos y revisa quién tiene acceso a tu cuenta.</p>
+                <div class="pop-banner banner-green">TU SEGURIDAD DEPENDE DE TI</div>
             </div>
 
+            <div id="modal-4" class="modal-content">
+                <button class="close-modal" onclick="closeModal()"><img src="src/img_p2/iconoCerrar.png"></button>
+                <img src="src/img_p2/imgPop4.png" class="pop-icon">
+                <h2 class="pop-title-yellow">ANTES DE COMPARTIR</h2>
+                <p class="pop-text">¿Es necesario? ¿Es seguro? ¿Confío en esta plataforma?</p>
+                <div class="pop-banner banner-yellow">SI DUDAS, NO LO HAGAS</div>
+            </div>
         </div>
-
-        <p class="footer-text">
-            Protege tus datos en la era de la Inteligencia Artificial
-        </p>
-
-        <!-- BOTONES -->
-        <div class="nav-buttons">
-            <a href="index.html" class="btn">← INICIO</a>
-            <a href="pagina3.html" class="btn">SIGUIENTE →</a>
-        </div>
-
-    </main>
-
-</div>
-
-<!-- ================= POPUPS ================= -->
-
-<div id="popup1" class="popup">
-    <span onclick="cerrar('popup1')">✖</span>
-    <h3>¿TE HA PASADO?</h3>
-    <p>A veces confiamos en la IA sin pensar. Puede ayudarte, pero también manipular información.</p>
-</div>
-
-<div id="popup2" class="popup">
-    <span onclick="cerrar('popup2')">✖</span>
-    <h3>CASO REAL</h3>
-    <p>Un usuario compartió su correo en un chat y luego recibió mensajes falsos.</p>
-</div>
-
-<div id="popup3" class="popup">
-    <span onclick="cerrar('popup3')">✖</span>
-    <h3>TIP RÁPIDO</h3>
-    <p>Activa la verificación en dos pasos y revisa quién tiene acceso a tu cuenta.</p>
-</div>
-
-<div id="popup4" class="popup">
-    <span onclick="cerrar('popup4')">✖</span>
-    <h3>ANTES DE COMPARTIR</h3>
-    <p>¿Es necesario? ¿Es seguro? Si dudas, no lo hagas.</p>
-</div>
-
-<!-- JS -->
-<script src="js/script.js"></script>
-
+    </div>
+    <script src="js/script.js"></script>
 </body>
 </html>
