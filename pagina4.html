@@ -5,20 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guardianes de la Identidad - Sistema de Ciberseguridad</title>
     
-    <!-- Google Fonts: Orbitron (estilo glitch/técnico) y Montserrat (limpio) -->
+     <!-- Google Fonts: Orbitron (estilo glitch/técnico) y Montserrat (limpio) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     
     <!-- FontAwesome CDN para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Hoja de estilos externa -->
+     <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
+
         <!-- =============== HEADER =============== -->
+
         <header class="header">
             <div class="status-bar">
                 <div class="time">10:41</div>
@@ -34,14 +35,66 @@
         </header>
 
         <!-- =============== MAIN CONTENT =============== -->
-        <main class="main-content">
-            <!-- Título Principal -->
-            <h1 class="main-title">
-                EDITAN AQUI
+
+        <main class="main-content p4-main">
+
+            <h1 class="p4-title">
+                MISIÓN:<br>EL DILEMA DE LA IA
             </h1>
+
+            <div class="p4-chat">
+
+                <div class="p4-bubble p4-bubble--left">
+                    <div class="p4-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="p4-bubble-text">
+                        Hola, estudiante. Para ayudarte con tu tarea, por favor dime tu nombre y el colegio donde estudias.
+                    </div>
+                </div>
+
+                <div class="p4-bubble p4-bubble--left">
+                    <div class="p4-avatar">
+                        <i class="fas fa-robot"></i>
+                    </div>
+                    <div class="p4-bubble-text">
+                        De esta manera, podré adaptar mis respuestas a tus necesidades específicas.
+                    </div>
+                </div>
+
+                
+                <button class="p4-option p4-option--red" id="btn-opcion-a" onclick="p4OpenModal('modal-p4-alerta')">
+                    <div class="p4-option-icon">
+                        <i class="fas fa-exclamation-circle"></i>
+                    </div>
+                    <span>[A] Claro, me llamo [Su Nombre] y estudio en [Su Colegio].</span>
+                </button>
+
+                
+                <button class="p4-option p4-option--green" id="btn-opcion-b" onclick="p4OpenModal('modal-p4-seguro')">
+                    <div class="p4-option-icon">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <span>[B] Prefiero no decirte mis datos personales. Solo ayúdame con la tarea en general.</span>
+                </button>
+
+            </div>
+
+            
+
+            <div class="p4-nav">
+                <button class="p4-nav-btn" onclick="location.href='pagina3.html'">
+                    <i class="fas fa-chevron-left"></i> ANTERIOR
+                </button>
+                <button class="p4-nav-btn" onclick="location.href='pagina5.html'">
+                    SIGUIENTE <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
         </main>
 
         <!-- =============== FOOTER =============== -->
+
         <footer class="footer">
             <!-- Botón SECURE -->
             <button class="footer-button" id="secure-btn">
@@ -61,6 +114,47 @@
                 <span>AYUDA</span>
             </button>
         </footer>
+
+        <div id="p4-overlay" class="p4-overlay">
+
+            
+            <div id="modal-p4-alerta" class="p4-modal">
+                <button class="p4-modal-close" id="p4-close-alerta" onclick="p4CloseModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="p4-modal-header p4-modal-header--red">
+                    <i class="fas fa-triangle-exclamation"></i>
+                    <h2>ALERTA DE SEGURIDAD</h2>
+                    <i class="fas fa-triangle-exclamation"></i>
+                </div>
+                <p class="p4-modal-text">
+                    ¡CUIDADO! Has compartido datos personales sensibles.
+                </p>
+                <button class="p4-modal-btn p4-modal-btn--red" id="p4-btn-reintentar" onclick="p4CloseModal()">
+                    INTENTAR DE NUEVO
+                </button>
+            </div>
+
+            
+            <div id="modal-p4-seguro" class="p4-modal">
+                <button class="p4-modal-close" id="p4-close-seguro" onclick="p4CloseModal()">
+                    <i class="fas fa-times"></i>
+                </button>
+                <div class="p4-modal-header p4-modal-header--green">
+                    <i class="fas fa-lock"></i>
+                    <h2>ACCIÓN SEGURA</h2>
+                    <i class="fas fa-lock"></i>
+                </div>
+                <p class="p4-modal-text">
+                    ¡Muy bien! Has protegido tu información.
+                </p>
+                <button class="p4-modal-btn p4-modal-btn--green" id="p4-btn-continuar" onclick="p4CloseModal()">
+                    CONTINUAR
+                </button>
+            </div>
+
+        </div>
+
     </div>
 
     <!-- =============== JAVASCRIPT =============== -->
