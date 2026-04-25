@@ -829,7 +829,6 @@ body { background: #000; display: flex; justify-content: center; font-family: va
     font-weight: 700;
     line-height: 1.4;
     transition: all var(--transition);
-    margin-top: 20px;
 }
 
 .p4-option-icon {
@@ -884,7 +883,7 @@ body { background: #000; display: flex; justify-content: center; font-family: va
     display: flex;
     justify-content: space-between;
     width: 100%;
-    margin-top: 145px;
+    margin-top: 1px;
     padding-bottom: 10px;
     gap: 12px;
 }
