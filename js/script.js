@@ -78,4 +78,45 @@ document.getElementById('help-btn').addEventListener('click', function() {
 // ============================================
 console.log('Sistema Guardianes de la Identidad inicializado correctamente');
 
+// =======================
+// PÁGINA 4 - FUNCIONES POPUP (INDEPENDIENTE)
+// =======================
+
+function p4OpenModal(modalId) {
+    const overlay = document.getElementById('p4-overlay');
+    if (!overlay) return;
+
+    // Oculta todos los modales
+    const modals = document.querySelectorAll('.p4-modal');
+    modals.forEach(m => m.style.display = 'none');
+
+    // Muestra overlay
+    overlay.style.display = 'flex';
+
+    // Muestra el modal seleccionado
+    const target = document.getElementById(modalId);
+    if (target) target.style.display = 'block';
+}
+
+function p4CloseModal() {
+    const overlay = document.getElementById('p4-overlay');
+    if (!overlay) return;
+
+    overlay.style.display = 'none';
+
+    // Oculta todos los modales
+    const modals = document.querySelectorAll('.p4-modal');
+    modals.forEach(m => m.style.display = 'none');
+}
+
+// Cerrar al hacer clic fuera del modal
+const overlayP4 = document.getElementById('p4-overlay');
+if (overlayP4) {
+    overlayP4.addEventListener('click', function (e) {
+        if (e.target === this) {
+            p4CloseModal();
+        }
+    });
+}
+
 
