@@ -1,0 +1,373 @@
+/* ============================================
+    Estilos Página 5
+    Guardianes de la Identidad — Misión: El Dilema de la IA
+   ============================================ */
+
+/* ============================================
+   MENÚ HAMBURGUESA — submenú deslizable
+   ============================================ */
+
+.p5-nav-menu {
+    display: none;
+    position: absolute;
+    top: 85px; /* justo debajo del header */
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    gap: 8px;
+    padding: 12px 16px;
+    background: rgba(2, 11, 20, 0.97);
+    border-bottom: 1px solid rgba(0, 255, 255, 0.2);
+    z-index: 50;
+    animation: none;
+}
+
+.p5-nav-menu.open {
+    display: flex;
+    animation: p5MenuIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes p5MenuIn {
+    from { opacity: 0; transform: translateY(-12px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Cada botón del menú: mismo look que .footer-button */
+.p5-nav-item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 18px;
+    background-color: rgba(2, 11, 20, 0.7);
+    border: 1px solid rgba(0, 255, 255, 0.6);
+    border-radius: 20px;
+    color: var(--color-cyan-neon);
+    font-family: var(--font-glitch);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all var(--transition);
+    width: 100%;
+}
+
+.p5-nav-item i {
+    font-size: 18px;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 4px var(--color-cyan-neon));
+}
+
+.p5-nav-item:hover {
+    background: rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 14px rgba(0, 255, 255, 0.3);
+}
+
+.p5-nav-item:active {
+    transform: scale(0.97);
+}
+
+/* Fondo semitransparente para cerrar el menú al tocar fuera */
+.p5-nav-backdrop {
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 49;
+    background: transparent;
+}
+
+.p5-nav-backdrop.open {
+    display: block;
+}
+
+
+/* Layout del main en página 5 */
+.p5-main {
+    background-image: url(../src/img_p5/Fondo.jpg);
+    background-size: cover;
+    background-position: center;
+    justify-content: flex-start;
+    padding-top: 20px;
+    gap: 20px;
+}
+
+/* Título de misión */
+.p5-main .mission-title {
+    font-family: var(--font-glitch);
+    font-weight: 900;
+    font-size: 28px;
+    color: var(--color-blue-dark);
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    line-height: 1.25;
+    text-align: center;
+    text-shadow:
+        0 0 8px rgba(135,247,247,0.6),
+        0 0 20px rgba(135,247,247,0.3);
+    margin: 60px auto 100px;
+}
+
+.p5-main .mission-title::before,
+.p5-main .mission-title::after {
+    content: " MISIÓN: \A EL DILEMA DE LA IA";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    white-space: pre;
+}
+
+/* Capa fucsia que se desplaza a la izquierda */
+.p5-main .mission-title::before {
+    left: 2px;
+    text-shadow: -2px 0 #ff00c1;
+    clip: rect(44px, 450px, 56px, 0);
+    animation: glitch-anim 15s infinite linear alternate-reverse;
+}
+
+/* Capa cyan que se desplaza a la derecha */
+.p5-main .mission-title::after {
+    left: -2px;
+    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
+    animation: glitch-anim2 10s infinite linear alternate-reverse;
+}
+
+/* ---- Zona radial ---- */
+.p5-radial-zone {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    flex-shrink: 0;
+    margin: 0 auto;
+}
+
+.p5-ring--orbit {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 308px;
+    height: 308px;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    border: 3px solid rgba(16, 54, 101, 0.90);
+    pointer-events: none;
+    box-shadow: 0 0 8px rgba(135, 247, 247, 0.15);
+}
+
+/* Círculos concéntricos }*/
+.p5-ring--outer { width: 350px; height: 350px; }
+.p5-ring--inner { width: 210px; height: 210px; }
+
+/* Avatar central */
+.p5-user-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(0,255,136,0.18) 0%, rgba(2, 11, 20, 0.85) 70%);
+    border: 2px solid rgba(16, 54, 101, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    box-shadow: 0 0 20px rgba(0,255,136,0.25);
+}
+
+.p5-user-img {
+    width: 95%;
+    height: 95%;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* ---- Botones icono ---- */
+.p5-icon-btn {
+    position: absolute;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(135, 247, 247, 0.7);
+    background: rgba(2, 11, 20, 1.0);
+    color: var(--color-cyan-neon);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition);
+    box-shadow: 0 0 12px rgba(135,247,247,0.2);
+    z-index: 2;
+}
+
+.p5-icon-btn:hover {
+    background: rgba(16, 54, 101, 1.0);
+    box-shadow: 0 0 22px rgba(2, 11, 20, 0.85);
+    transform: scale(1.12);
+}
+.p5-icon-btn:active {
+    transform: scale(0.95);
+}
+
+/* Posiciones de los cuatro iconos */
+.p5-icon-btn--top    { top: -20px; left: 50%; transform: translateX(-50%); }
+.p5-icon-btn--left   { top: 50%; left: -20px; transform: translateY(-50%); color: #ff6b9d; border-color: rgba(255,107,157,0.7); }
+.p5-icon-btn--right  { top: 50%; right: -20px; transform: translateY(-50%); color: #f5c518; border-color: rgba(245,197,24,0.7);}
+.p5-icon-btn--bottom { bottom: -20px; left: 50%; transform: translateX(-50%); color: var(--color-green-neon); border-color: rgba(0,255,136,0.7); }
+
+.p5-icon-btn--top:hover    { transform: translateX(-50%) scale(1.12); }
+.p5-icon-btn--left:hover   { transform: translateY(-50%) scale(1.12); box-shadow: 0 0 22px rgba(255,107,157,0.5); }
+.p5-icon-btn--right:hover  { transform: translateY(-50%) scale(1.12); }
+.p5-icon-btn--bottom:hover { transform: translateX(-50%) scale(1.12); box-shadow: 0 0 22px rgba(0,255,136,0.5); }
+
+/* ---- Footer página 5 ---- */
+.p5-footer {
+    justify-content: space-between;
+}
+
+.p5-btn-finalizar {
+    background: rgba(0, 255, 136, 0.12);
+    border-color: var(--color-green-neon);
+    color: var(--color-green-neon);
+    font-family: var(--font-glitch);
+    font-size: 11px;
+    font-weight: 700;
+}
+
+
+/* ---- Overlay / Popup ---- */
+
+
+.p5-overlay {
+    display: none;
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(2, 11, 20, 0.7);
+    backdrop-filter: blur(3px);
+    z-index: 100;
+    align-items: center;
+    justify-content: center;
+}
+
+.p5-overlay.active {
+    display: flex;
+}
+
+.p5-popup {
+    width: 20%;
+    background: linear-gradient(160deg, rgba(5,20,35,0.98) 0%, rgba(2,11,20,0.98) 100%);
+    border: 1px solid rgba(135,247,247,0.5);
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow:
+        0 0 30px rgba(135,247,247,0.15),
+        0 8px 32px rgba(0,0,0,0.6);
+    animation: p5PopupIn 0.25s cubic-bezier(0.16,1,0.3,1);
+}
+
+@keyframes p5PopupIn {
+    from { opacity: 0; transform: scale(0.92) translateY(8px); }
+    to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* Header del popup */
+.p5-popup-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(135,247,247,0.08);
+    border-bottom: 1px solid rgba(135,247,247,0.2);
+    padding: 16px 18px;
+}
+
+.p5-popup-icon {
+    font-size: 22px;
+    flex-shrink: 0;
+}
+
+.p5-popup-title {
+    font-family: var(--font-glitch);
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-cyan-neon);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    flex: 1;
+    line-height: 1.3;
+    text-shadow: 0 0 8px rgba(135,247,247,0.5);
+}
+
+.p5-close-btn {
+    background: none;
+    border: none;
+    color: rgba(135,247,247,0.6);
+    font-size: 22px;
+    cursor: pointer;
+    line-height: 1;
+    transition: color var(--transition);
+    flex-shrink: 0;
+}
+.p5-close-btn:hover {
+    color: var(--color-cyan-neon);
+    text-shadow: 0 0 8px var(--color-cyan-neon);
+}
+
+/* Cuerpo del popup */
+.p5-popup-body {
+    padding: 18px 20px 14px;
+}
+
+.p5-popup-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.p5-popup-list li {
+    font-family: var(--font-clean);
+    font-size: 15px;
+    color: var(--color-gray-light);
+    line-height: 1.6;
+    padding-left: 18px;
+    position: relative;
+}
+
+.p5-popup-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--color-cyan-neon);
+}
+
+/* Alerta roja inferior */
+.p5-popup-alert {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(200, 30, 30, 0.2);
+    border-top: 1px solid rgba(255,80,80,0.35);
+    padding: 14px 18px;
+    font-family: var(--font-clean);
+    font-size: 14px;
+    color: #ff9090;
+    line-height: 1.5;
+}
+
+.p5-popup-alert i {
+    flex-shrink: 0;
+    font-size: 18px;
+    color: #ff5555;
+    margin-top: 2px;
+}
+
+.p5-popup-alert:has(#p5AlertText:empty) {
+    display: none;
+}

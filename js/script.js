@@ -120,3 +120,33 @@ if (overlayP4) {
 }
 
 
+// =======================
+// POP/ PAGINA 2
+// =======================
+
+function openModal(modalId) {
+    const overlay = document.getElementById('modal-overlay');
+    overlay.style.display = 'flex';
+
+    // Limpiar otros modales antes de abrir el nuevo
+    const modals = document.querySelectorAll('.modal-content');
+    modals.forEach(m => m.style.display = 'none');
+
+    const targetModal = document.getElementById(modalId);
+    if (targetModal) {
+        targetModal.style.display = 'block';
+    }
+}
+
+function closeModal() {
+    document.getElementById('modal-overlay').style.display = 'none';
+    const modals = document.querySelectorAll('.modal-content');
+    modals.forEach(m => m.style.display = 'none');
+}
+
+// Cerrar al hacer clic fuera del cuadro blanco
+document.getElementById('modal-overlay').addEventListener('click', function(e) {
+    if (e.target === this) {
+        closeModal();
+    }
+});

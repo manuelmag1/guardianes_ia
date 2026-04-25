@@ -9,61 +9,110 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <!-- FontAwesome CDN para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
+</head> <body>
     <div class="container">
-        <!-- =============== HEADER =============== -->
         <header class="header">
             <div class="status-bar">
-                <div class="time">10:41</div>
+                <div class="time">9:41</div>
                 <div class="status-icon">
-                    <i class="fas fa-signal"></i>
-                    <i class="fas fa-wifi"></i>
-                    <i class="fas fa-battery-full"></i>
+                    <i class="fas fa-signal"></i> <i class="fas fa-wifi"></i> <i class="fas fa-battery-full"></i>
                 </div>
             </div>
-            <button class="hamburger-btn" id="hamburger-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <button class="hamburger-btn"><i class="fas fa-bars"></i></button>
         </header>
 
-        <!-- =============== MAIN CONTENT =============== -->
         <main class="main-content">
-            <!-- Título Principal -->
-            <h1 class="main-title2">
-                EDITAN AQUI
-            </h1>
+            <h1 class="title-p2">SISTEMA CENTRAL:<br><span>SELECCIONA TU MISIÓN</span></h1>
+
+            <div class="mission-grid">
+                <div class="mission-card card-teal">
+                    <div class="card-header"><span class="card-number">01</span><img src="src/img_p2/imgIA1.png" class="card-icon"></div>
+                    <h3>LA TRAMPA DE LA IA</h3>
+                    <p>Riesgos invisibles y manipulación cognitiva.</p>
+                    <button class="action-btn" onclick="openModal('modal-1')">VER EJEMPLO</button>
+                </div>
+
+                <div class="mission-card card-orange">
+                    <div class="card-header"><span class="card-number">02</span><img src="src/img_p2/imgCasos2.png" class="card-icon"></div>
+                    <h3>CASOS DE ESTUDIO</h3>
+                    <p>Analiza situaciones reales de suplantación.</p>
+                    <button class="action-btn" onclick="openModal('modal-2')">CASO REAL</button>
+                </div>
+
+                <div class="mission-card card-green">
+                    <div class="card-header"><span class="card-number">03</span><img src="src/img_p2/imgPractica3.png" class="card-icon"></div>
+                    <h3>PRÁCTICA: PERFIL</h3>
+                    <p>Ejercicios para tus defensas digitales.</p>
+                    <button class="action-btn" onclick="openModal('modal-3')">TIP RÁPIDO</button>
+                </div>
+
+                <div class="mission-card card-yellow">
+                    <div class="card-header"><span class="card-number">04</span><img src="src/img_p2/imgPrevencion4.png" class="card-icon"></div>
+                    <h3>PREVENCIÓN</h3>
+                    <p>Guía de seguridad y protocolos diarios.</p>
+                    <button class="action-btn" onclick="openModal('modal-4')">TIP RÁPIDO</button>
+                </div>
+            </div>
+
+            <p class="tagline">Protege tus datos en la era de la IA</p>
+
+            <div class="flow-nav neumorphic-nav">
+                <button class="nav-btn btn-inicio" onclick="location.href='index.html'">
+                    <i class="fas fa-chevron-left"></i> INICIO
+                </button>
+                <button class="nav-btn next btn-siguiente" onclick="location.href='pagina3.html'">
+                    SIGUIENTE <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
         </main>
 
-        <!-- =============== FOOTER =============== -->
         <footer class="footer">
-            <!-- Botón SECURE -->
-            <button class="footer-button" id="secure-btn">
-                <img src="src/img_p1/CANDADO.png" alt="Seguro" class="footer-button-icon">
-                <span>SECURE</span>
-            </button>
-
-            <!-- Botón IA INTEL -->
-            <button class="footer-button" id="ia-btn">
-                <img src="src/img_p1/IA ICONO.png" alt="IA" class="footer-button-icon">
-                <span>IA INTEL</span>
-            </button>
-
-            <!-- Botón AYUDA -->
-            <button class="footer-button" id="help-btn">
-                <img src="src/img_p1/AYUDA.png" alt="Ayuda" class="footer-button-icon">
-                <span>AYUDA</span>
-            </button>
+            <button class="footer-button"><img src="src/img_p1/CANDADO.png" class="footer-button-icon"><span>SECURE</span></button>
+            <button class="footer-button"><img src="src/img_p1/IA ICONO.png" class="footer-button-icon"><span>IA INTEL</span></button>
+            <button class="footer-button"><img src="src/img_p1/AYUDA.png" class="footer-button-icon"><span>AYUDA</span></button>
         </footer>
-    </div>
 
-    <!-- =============== JAVASCRIPT =============== -->
+        <div id="modal-overlay" class="modal-overlay">
+            <div id="modal-1" class="modal-content">
+                <button class="close-modal" onclick="closeModal()"><img src="src/img_p2/iconoCerrar.png"></button>
+                <img src="src/img_p2/imgPop1.png" class="pop-icon">
+                <h2 class="pop-title-blue">¿TE HA PASADO?</h2>
+                <p class="pop-text">A veces confiamos en la IA sin pensar. Puede parecer útil... pero también puede manipular información.</p>
+                <div class="pop-banner banner-blue">NO TODO LO QUE VES ES VERDAD</div>
+            </div>
+
+            <div id="modal-2" class="modal-content">
+                <button class="close-modal" onclick="closeModal()"><img src="src/img_p2/iconoCerrar.png"></button>
+                <img src="src/img_p2/imgPop2.png" class="pop-icon">
+                <h2 class="pop-title-orange">CASO REAL</h2>
+                <p class="pop-text">Un usuario compartió su correo en un chatbot... días después recibió mensajes falsos.</p>
+                <div class="pop-banner banner-orange">TODO EMPEZÓ CON UN PEQUEÑO DATO</div>
+            </div>
+
+            <div id="modal-3" class="modal-content">
+                <button class="close-modal" onclick="closeModal()"><img src="src/img_p2/iconoCerrar.png"></button>
+                <img src="src/img_p2/imgPop3.png" class="pop-icon">
+                <h2 class="pop-title-green">TIP RÁPIDO</h2>
+                <p class="pop-text">Activa la verificación en dos pasos y revisa quién tiene acceso a tu cuenta.</p>
+                <div class="pop-banner banner-green">TU SEGURIDAD DEPENDE DE TI</div>
+            </div>
+
+            <div id="modal-4" class="modal-content">
+                <button class="close-modal" onclick="closeModal()"><img src="src/img_p2/iconoCerrar.png"></button>
+                <img src="src/img_p2/imgPop4.png" class="pop-icon">
+                <h2 class="pop-title-yellow">ANTES DE COMPARTIR</h2>
+                <p class="pop-text">¿Es necesario? ¿Es seguro? ¿Confío en esta plataforma?</p>
+                <div class="pop-banner banner-yellow">SI DUDAS, NO LO HAGAS</div>
+            </div>
+        </div>
+    </div>
     <script src="js/script.js"></script>
 </body>
 </html>
