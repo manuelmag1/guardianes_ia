@@ -3,64 +3,159 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Guardianes de la Identidad - Sistema de Ciberseguridad</title>
-    
-    <!-- Google Fonts: Orbitron (estilo glitch/técnico) y Montserrat (limpio) -->
+    <title>Revista Digital - Página 3</title>
+
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
-    
-    <!-- FontAwesome CDN para iconos -->
+
+    <!-- FontAwesome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <!-- Hoja de estilos externa -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
     <div class="container">
+
         <!-- =============== HEADER =============== -->
         <header class="header">
             <div class="status-bar">
-                <div class="time">10:41</div>
-                <div class="status-icon">
+                <div class="time" id="clock">9:41</div>
+                <div class="status-icons">
                     <i class="fas fa-signal"></i>
                     <i class="fas fa-wifi"></i>
                     <i class="fas fa-battery-full"></i>
                 </div>
             </div>
-            <button class="hamburger-btn" id="hamburger-btn">
-                <i class="fas fa-bars"></i>
-            </button>
+            <div class="nav-bar">
+                <button class="hamburger-btn" id="hamburger-btn">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="avatar">
+                    <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="30" cy="30" r="30" fill="#f0c060"/>
+                        <ellipse cx="30" cy="46" rx="18" ry="12" fill="#4a6fa5"/>
+                        <circle cx="30" cy="24" r="11" fill="#f5c28a"/>
+                        <path d="M19 22Q19 10 30 10Q41 10 41 22Q38 14 30 14Q22 14 19 22Z" fill="#6b3a1f"/>
+                    </svg>
+                </div>
+                <button class="profile-btn">
+                    <i class="fas fa-user-circle"></i>
+                </button>
+            </div>
         </header>
 
         <!-- =============== MAIN CONTENT =============== -->
         <main class="main-content">
-            <!-- Título Principal -->
-            <h1 class="main-title">
-                EDITAN AQUI
-            </h1>
+
+            <!-- Grid de aplicaciones -->
+            <div class="apps-grid">
+
+                <!-- Mail -->
+                <div class="app-item" data-alert="mail">
+                    <div class="app-icon mail">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <span class="app-name">Mail</span>
+                </div>
+
+                <!-- Chat -->
+                <div class="app-item" data-alert="chat">
+                    <div class="app-icon chat">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <span class="app-name">Chat</span>
+                </div>
+
+                <!-- Cloud 1 -->
+                <div class="app-item" data-alert="cloud1">
+                    <div class="app-icon cloud1">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <span class="app-name">Cloud 1</span>
+                </div>
+
+                <!-- Cloud 2 -->
+                <div class="app-item" data-alert="cloud2">
+                    <div class="app-icon cloud2">
+                        <i class="fas fa-cloud-upload-alt"></i>
+                    </div>
+                    <span class="app-name">Cloud 2</span>
+                </div>
+
+                <!-- Shield -->
+                <div class="app-item" data-alert="shield">
+                    <div class="app-icon shield">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <span class="app-name">Shield</span>
+                </div>
+
+                <!-- Settings -->
+                <div class="app-item" data-alert="settings">
+                    <div class="app-icon settings">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span class="app-name">Settings</span>
+                </div>
+
+                <!-- Maps 1 -->
+                <div class="app-item" data-alert="maps1">
+                    <div class="app-icon maps1">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span class="app-name">Maps</span>
+                </div>
+
+                <!-- Maps 2 -->
+                <div class="app-item" data-alert="maps2">
+                    <div class="app-icon maps2">
+                        <i class="fas fa-cog"></i>
+                    </div>
+                    <span class="app-name">Maps</span>
+                </div>
+
+                <!-- Payment -->
+                <div class="app-item" data-alert="payment">
+                    <div class="app-icon payment">
+                        <i class="fas fa-credit-card"></i>
+                    </div>
+                    <span class="app-name">Payment</span>
+                </div>
+
+            </div>
         </main>
 
         <!-- =============== FOOTER =============== -->
         <footer class="footer">
-            <!-- Botón SECURE -->
-            <button class="footer-button" id="secure-btn">
-                <img src="src/img_p1/CANDADO.png" alt="Seguro" class="footer-button-icon">
-                <span>SECURE</span>
+            <button class="footer-button" id="btn-anterior">
+                <i class="fas fa-chevron-left footer-button-icon"></i>
+                <span>ANTERIOR</span>
             </button>
-
-            <!-- Botón IA INTEL -->
-            <button class="footer-button" id="ia-btn">
-                <img src="src/img_p1/IA ICONO.png" alt="IA" class="footer-button-icon">
-                <span>IA INTEL</span>
-            </button>
-
-            <!-- Botón AYUDA -->
-            <button class="footer-button" id="help-btn">
-                <img src="src/img_p1/AYUDA.png" alt="Ayuda" class="footer-button-icon">
-                <span>AYUDA</span>
+            <button class="footer-button" id="btn-siguiente">
+                <i class="fas fa-chevron-right footer-button-icon"></i>
+                <span>SIGUIENTE</span>
             </button>
         </footer>
+
+    </div><!-- /container -->
+
+    <!-- =============== MODAL DE ALERTA =============== -->
+    <div class="overlay" id="overlay">
+        <div class="alert-box" id="alert-box">
+            <button class="alert-close" id="alert-close">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="alert-icon-wrap" id="alert-icon-wrap">
+                <i class="fas fa-envelope" id="alert-icon"></i>
+            </div>
+            <span class="alert-badge" id="alert-badge"></span>
+            <h2 class="alert-title" id="alert-title"></h2>
+            <p class="alert-msg" id="alert-msg"></p>
+            <button class="alert-cta" id="alert-cta"></button>
+        </div>
     </div>
 
     <!-- =============== JAVASCRIPT =============== -->
