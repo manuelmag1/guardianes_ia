@@ -1025,131 +1025,328 @@ body { background: #000; display: flex; justify-content: center; font-family: va
     box-shadow: 0 0 20px rgba(30, 180, 100, 0.8);
     transform: translateY(-2px);
 }
-/* ═══════════════════════════════════════════════════
-   styles_p3.css  —  Estilos exclusivos de Página 3
-   Revista Digital · Guardianes IA
-═══════════════════════════════════════════════════ */
-/* RESET PARA EVITAR QUE SE VEA GIGANTE */
-* { margin: 0; padding: 0; box-sizing: border-box; }
 
-body {
+/* ============================================
+   PÁGINA 3 - REVISTA DIGITAL (APPS GRID)
+   ============================================ */
+
+/* Fondo del body para página 3 */
+body.pagina3 {
     background: #0d0f1a;
     font-family: 'Montserrat', sans-serif;
     min-height: 100vh;
     display: flex;
     align-items: center;
     justify-content: center;
-}
-
-/* EL CONTENEDOR DEL CELULAR (Crucial para el tamaño) */
-.container {
-    width: 300px;
-    height: 600px;
-    background: #c8cacc; /* Color gris de fondo de tu imagen */
-    border-radius: 40px;
-    border: 3px solid #2a2d45;
     overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    box-shadow: 0 30px 80px rgba(0,0,0,0.7);
-    position: relative;
 }
 
-.header { background: #c8cacc; width: 100%; }
+/* Contenedor del celular página 3 */
+.container.p3 {
+    width: 300px !important;
+    height: 600px !important;
+    min-width: 300px !important;
+    max-width: 300px !important;
+    min-height: 600px !important;
+    max-height: 600px !important;
+    background: #c8cacc !important;
+    border-radius: 40px !important;
+    border: 3px solid #2a2d45 !important;
+    overflow: hidden !important;
+    display: flex !important;
+    flex-direction: column !important;
+    box-shadow: 0 30px 80px rgba(0,0,0,0.7) !important;
+    position: relative !important;
+    background-image: none !important;
+}
 
-.status-bar {
+/* Header página 3 */
+.container.p3 .header {
+    background: #c8cacc !important;
+    border-bottom: none !important;
+    flex-shrink: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    padding: 0 !important;
+}
+
+.container.p3 .status-bar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    padding: 14px 16px 4px !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    color: #222 !important;
+    background: #c8cacc !important;
+}
+
+.container.p3 .status-icons {
+    display: flex !important;
+    gap: 5px !important;
+    font-size: 10px !important;
+    color: #222 !important;
+}
+
+/* Nav bar con hamburger + avatar + perfil */
+.container.p3 .nav-bar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 4px 16px 8px !important;
+}
+
+.container.p3 .hamburger-btn {
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    color: #333 !important;
+    font-size: 18px !important;
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    align-self: auto !important;
+    margin: 0 !important;
+}
+.container.p3 .hamburger-btn:hover {
+    color: #000 !important;
+    text-shadow: none !important;
+}
+
+/* Avatar — tamaño estricto */
+.container.p3 .p3-avatar {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+    min-height: 50px !important;
+    max-height: 50px !important;
+    border-radius: 50% !important;
+    border: 3px solid #e8a020 !important;
+    overflow: hidden !important;
+    display: block !important;
+    flex-shrink: 0 !important;
+}
+.container.p3 .p3-avatar svg {
+    width: 50px !important;
+    height: 50px !important;
+    min-width: 50px !important;
+    max-width: 50px !important;
+    display: block !important;
+}
+
+.container.p3 .profile-btn {
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    color: #888 !important;
+    font-size: 20px !important;
+    padding: 0 !important;
+    width: auto !important;
+    height: auto !important;
+}
+
+/* Main content página 3 */
+.container.p3 .main-content {
+    flex: 1 !important;
+    background: #c8cacc !important;
+    overflow: hidden !important;
+    padding: 0 !important;
+    display: block !important;
+    justify-content: unset !important;
+    align-items: unset !important;
+    gap: unset !important;
+    text-align: unset !important;
+}
+
+/* Grid de apps */
+.container.p3 .apps-grid {
+    display: grid !important;
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 14px 8px !important;
+    padding: 16px 14px 8px !important;
+    width: 100% !important;
+}
+
+.container.p3 .app-item {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 5px !important;
+    cursor: pointer !important;
+    margin: 0 !important;
+    padding: 0 !important;
+}
+.container.p3 .app-item:active .app-icon {
+    transform: scale(0.88) !important;
+}
+
+.container.p3 .app-icon {
+    width: 56px !important;
+    height: 56px !important;
+    min-width: 56px !important;
+    max-width: 56px !important;
+    min-height: 56px !important;
+    max-height: 56px !important;
+    border-radius: 13px !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 22px !important;
+    color: #fff !important;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
+    transition: transform 0.1s !important;
+    margin: 0 !important;
+}
+
+.container.p3 .app-name {
+    font-size: 10px !important;
+    color: #222 !important;
+    font-weight: 600 !important;
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/* Colores de íconos */
+.container.p3 .mail     { background: linear-gradient(145deg, #2196f3, #0d6efd) !important; }
+.container.p3 .chat     { background: linear-gradient(145deg, #2ecc40, #1a9e2e) !important; }
+.container.p3 .cloud1   { background: linear-gradient(145deg, #7ecef4, #40b0d8) !important; }
+.container.p3 .cloud2   { background: linear-gradient(145deg, #40b0d8, #1a8fb5) !important; }
+.container.p3 .shield   { background: linear-gradient(145deg, #222,    #3a3a3a) !important; }
+.container.p3 .settings { background: linear-gradient(145deg, #999,    #666)    !important; }
+.container.p3 .maps1    { background: linear-gradient(145deg, #c840c0, #8c1a90) !important; }
+.container.p3 .maps2    { background: linear-gradient(145deg, #222,    #3a3a3a) !important; }
+.container.p3 .payment  { background: linear-gradient(145deg, #e83030, #b01818) !important; }
+
+/* Footer página 3 */
+.container.p3 .footer {
+    background: linear-gradient(135deg, #1a2340, #0e1428) !important;
+    display: flex !important;
+    border-top: 1px solid #2a3460 !important;
+    flex-shrink: 0 !important;
+    width: 100% !important;
+    height: auto !important;
+    padding: 0 !important;
+    gap: 0 !important;
+    justify-content: unset !important;
+}
+
+.container.p3 .footer-button {
+    flex: 1 !important;
+    padding: 12px 8px !important;
+    background: none !important;
+    border: none !important;
+    border-radius: 0 !important;
+    cursor: pointer !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    color: #8899bb !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 10px !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px !important;
+    text-transform: uppercase !important;
+    box-shadow: none !important;
+    transform: none !important;
+}
+.container.p3 .footer-button:hover {
+    color: #fff !important;
+    background: rgba(255,255,255,0.04) !important;
+    transform: none !important;
+    box-shadow: none !important;
+}
+.container.p3 #p3-ant {
+    border-right: 1px solid #2a3460 !important;
+}
+
+/* Overlay / Modal página 3 */
+.container.p3 ~ #p3-overlay,
+#p3-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0,0,0,0.55);
+    align-items: center;
+    justify-content: center;
+    z-index: 99999;
+}
+#p3-overlay.show { display: flex; }
+
+#p3-alertbox {
+    background: #fff;
+    border-radius: 20px;
+    padding: 26px 22px 22px;
+    width: 270px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.45);
+    position: relative;
+    animation: p3pop 0.2s ease;
+}
+@keyframes p3pop {
+    from { transform: scale(0.82); opacity: 0; }
+    to   { transform: scale(1);   opacity: 1; }
+}
+
+#p3-closebtn {
+    position: absolute;
+    top: -13px; right: -13px;
+    width: 34px; height: 34px;
+    border-radius: 50%;
+    background: #fff;
+    border: 2px solid #222;
     display: flex;
-    justify-content: space-between;
-    padding: 15px 20px 5px;
-    font-size: 10px;
-    font-weight: bold;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 13px;
     color: #222;
 }
+#p3-closebtn:hover { background: #f0f0f0; }
 
-.nav-bar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px 20px 10px;
-}
-
-.avatar {
-    width: 50px;
-    height: 50px;
+#p3-iconwrap {
+    width: 80px; height: 80px;
     border-radius: 50%;
-    border: 3px solid #e8a020;
-    overflow: hidden;
-}
-
-.main-content { flex: 1; padding: 10px; }
-
-.apps-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 15px;
-    padding: 10px;
-}
-
-.app-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    cursor: pointer;
-}
-
-.app-icon {
-    width: 55px;
-    height: 55px;
-    border-radius: 12px;
+    margin: 0 auto 14px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white;
-    font-size: 24px;
-    margin-bottom: 5px;
+    font-size: 34px;
 }
 
-.app-name { font-size: 10px; font-weight: 600; color: #222; }
-
-/* Colores */
-.mail { background: linear-gradient(145deg, #2196f3, #0d6efd); }
-.chat { background: linear-gradient(145deg, #2ecc40, #1a9e2e); }
-.cloud1 { background: #40b0d8; }
-.cloud2 { background: #1a8fb5; }
-.shield { background: #3a3a3a; }
-.settings { background: #666; }
-
-.footer {
-    background: #1a2340;
-    display: flex;
-    height: 50px;
-}
-
-.footer-button {
-    flex: 1;
-    background: none;
-    border: none;
-    color: #8899bb;
-    font-size: 9px;
-    font-family: 'Orbitron';
-    cursor: pointer;
-}
-
-/* Modal Alerta */
-.overlay {
-    display: none;
-    position: absolute; /* Para que se vea dentro del "celular" */
-    inset: 0;
-    background: rgba(0,0,0,0.6);
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-}
-.overlay.show { display: flex; }
-.alert-box {
-    background: white;
-    width: 85%;
-    padding: 20px;
+#p3-badge {
+    display: inline-block;
+    padding: 4px 14px;
     border-radius: 20px;
-    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
 }
+.p3-balerta { background: #fde9b0; color: #b07800; }
+.p3-bcaso   { background: #fde0cc; color: #b04400; }
+.p3-btip    { background: #d4f0d4; color: #1a6a1a; }
+
+#p3-title {
+    font-size: 15px; font-weight: 700;
+    color: #111; margin-bottom: 10px;
+    line-height: 1.35;
+    font-family: 'Montserrat', sans-serif;
+}
+#p3-msg {
+    font-size: 11.5px; color: #555;
+    line-height: 1.65; margin-bottom: 20px;
+    font-family: 'Montserrat', sans-serif;
+}
+#p3-cta {
+    width: 100%; padding: 12px 10px;
+    border: none; border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px; font-weight: 700;
+    letter-spacing: 1px; text-transform: uppercase;
+    cursor: pointer; line-height: 1.5;
+}
+.p3-red    { background: #e02020; color: #fff; }
+.p3-orange { background: #f5a623; color: #fff; }
+.p3-green  { background: #2e7d32; color: #fff; }
