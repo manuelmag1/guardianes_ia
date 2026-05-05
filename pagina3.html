@@ -3,249 +3,252 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Revista Digital - Página 3</title>
+    <title>Guardianes de la Identidad - Página 3</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <!-- Neutraliza CUALQUIER css externo del repositorio -->
     <style>
-        /* Reset total — sobreescribe cualquier CSS del repo */
-        *, *::before, *::after {
-            margin: 0 !important;
-            padding: 0 !important;
-            box-sizing: border-box !important;
-        }
-
-        html {
-            height: 100% !important;
-            width: 100% !important;
-        }
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            min-height: 100vh !important;
-            width: 100% !important;
-            background: #0d0f1a !important;
-            font-family: 'Montserrat', sans-serif !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            overflow: hidden !important;
+            font-family: 'Montserrat', sans-serif;
+            background-image: url('src/img_p1/FONDO.png');
+            background-color: #020b14;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: #fff;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        /* ── PHONE ── */
-        #p3-container {
-            width: 300px !important;
-            height: 600px !important;
-            min-width: 300px !important;
-            max-width: 300px !important;
-            min-height: 600px !important;
-            max-height: 600px !important;
-            background: #c8cacc !important;
-            border-radius: 40px !important;
-            border: 3px solid #2a2d45 !important;
-            overflow: hidden !important;
-            display: flex !important;
-            flex-direction: column !important;
-            box-shadow: 0 30px 80px rgba(0,0,0,0.7) !important;
-            position: relative !important;
-            flex-shrink: 0 !important;
+        /* ── CONTENEDOR — mismo tamaño que todas las páginas ── */
+        .container {
+            width: 430px;
+            height: 932px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background-image: url('src/img_p1/FONDO.png');
+            box-shadow: 0 0 30px rgba(72,143,143,0.3);
+            overflow: hidden;
         }
 
         /* ── HEADER ── */
-        #p3-header {
-            background: #c8cacc !important;
-            flex-shrink: 0 !important;
-            width: 100% !important;
+        .header {
+            background: rgba(2,11,20,0.8);
+            border-bottom: 1px solid rgba(0,255,255,0.2);
+            flex-shrink: 0;
+            display: flex;
+            flex-direction: column;
+            padding: 10px 0;
         }
 
-        #p3-statusbar {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            padding: 14px 16px 4px !important;
-            font-size: 10px !important;
-            font-weight: 700 !important;
-            color: #222 !important;
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px 10px 20px;
+            font-size: 14px;
+            font-weight: 600;
+            color: #a0b0b9;
         }
 
-        #p3-statusicons {
-            display: flex !important;
-            gap: 5px !important;
-            font-size: 10px !important;
-            color: #222 !important;
+        .status-icons {
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            font-size: 13px;
         }
 
-        #p3-navbar {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: space-between !important;
-            padding: 4px 16px 8px !important;
+        .nav-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
         }
 
-        #p3-hambtn {
-            background: none !important;
-            border: none !important;
-            cursor: pointer !important;
-            color: #333 !important;
-            font-size: 18px !important;
-            display: flex !important;
-            align-items: center !important;
-            width: auto !important;
-            height: auto !important;
+        .hamburger-btn {
+            background: none;
+            border: none;
+            color: #c0c0c0;
+            font-size: 24px;
+            cursor: pointer;
+            transition: color 0.3s ease;
+            padding: 5px;
+        }
+        .hamburger-btn:hover {
+            color: #87f7f7;
+            text-shadow: 0 0 10px #87f7f7;
         }
 
-        #p3-profilebtn {
-            background: none !important;
-            border: none !important;
-            cursor: pointer !important;
-            color: #888 !important;
-            font-size: 20px !important;
-            display: flex !important;
-            align-items: center !important;
-            width: auto !important;
-            height: auto !important;
+        /* Avatar — tamaño fijo absoluto */
+        .p3-avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            border: 3px solid #e8a020;
+            overflow: hidden;
+            flex-shrink: 0;
+            display: block;
+        }
+        .p3-avatar svg {
+            width: 80px;
+            height: 80px;
+            display: block;
         }
 
-        /* AVATAR — el más crítico */
-        #p3-avatar {
-            width: 50px !important;
-            height: 50px !important;
-            min-width: 50px !important;
-            max-width: 50px !important;
-            min-height: 50px !important;
-            max-height: 50px !important;
-            border-radius: 50% !important;
-            border: 3px solid #e8a020 !important;
-            overflow: hidden !important;
-            display: block !important;
-            flex-shrink: 0 !important;
-        }
-
-        #p3-avatar svg {
-            width: 50px !important;
-            height: 50px !important;
-            min-width: 50px !important;
-            max-width: 50px !important;
-            min-height: 50px !important;
-            max-height: 50px !important;
-            display: block !important;
+        .profile-btn {
+            background: none;
+            border: none;
+            color: #888;
+            font-size: 28px;
+            cursor: pointer;
         }
 
         /* ── MAIN ── */
-        #p3-main {
-            flex: 1 !important;
-            background: #c8cacc !important;
-            overflow: hidden !important;
-            width: 100% !important;
+        .main-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 30px 20px;
+            overflow-y: auto;
         }
 
-        /* ── GRID ── */
-        #p3-grid {
-            display: grid !important;
-            grid-template-columns: repeat(3, 1fr) !important;
-            gap: 14px 8px !important;
-            padding: 16px 14px 8px !important;
-            width: 100% !important;
+        /* ── TÍTULO ── */
+        .section-title {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 20px;
+            font-weight: 700;
+            color: #87f7f7;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-shadow: 0 0 10px #87f7f7;
+            margin-bottom: 30px;
+            text-align: center;
         }
 
-        .p3-app {
-            display: flex !important;
-            flex-direction: column !important;
-            align-items: center !important;
-            gap: 5px !important;
-            cursor: pointer !important;
-        }
-        .p3-app:active .p3-icon { transform: scale(0.88) !important; }
-
-        .p3-icon {
-            width: 56px !important;
-            height: 56px !important;
-            min-width: 56px !important;
-            max-width: 56px !important;
-            min-height: 56px !important;
-            max-height: 56px !important;
-            border-radius: 13px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            font-size: 22px !important;
-            color: #fff !important;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3) !important;
-            transition: transform 0.1s !important;
+        /* ── GRID DE APPS ── */
+        .apps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px 20px;
+            width: 100%;
+            max-width: 380px;
         }
 
-        .p3-label {
-            font-size: 10px !important;
-            color: #222 !important;
-            font-weight: 600 !important;
-            font-family: 'Montserrat', sans-serif !important;
+        .app-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+        }
+        .app-item:active .app-icon { transform: scale(0.88); }
+
+        .app-icon {
+            width: 90px;
+            height: 90px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #fff;
+            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
+            transition: transform 0.15s, box-shadow 0.2s;
+        }
+        .app-item:hover .app-icon {
+            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
+            transform: translateY(-2px);
         }
 
-        .p3-mail     { background: linear-gradient(145deg,#2196f3,#0d6efd) !important; }
-        .p3-chat     { background: linear-gradient(145deg,#2ecc40,#1a9e2e) !important; }
-        .p3-cloud1   { background: linear-gradient(145deg,#7ecef4,#40b0d8) !important; }
-        .p3-cloud2   { background: linear-gradient(145deg,#40b0d8,#1a8fb5) !important; }
-        .p3-shield   { background: linear-gradient(145deg,#222,#3a3a3a) !important; }
-        .p3-settings { background: linear-gradient(145deg,#999,#666) !important; }
-        .p3-maps1    { background: linear-gradient(145deg,#c840c0,#8c1a90) !important; }
-        .p3-maps2    { background: linear-gradient(145deg,#222,#3a3a3a) !important; }
-        .p3-payment  { background: linear-gradient(145deg,#e83030,#b01818) !important; }
-
-        /* ── FOOTER ── */
-        #p3-footer {
-            background: linear-gradient(135deg,#1a2340,#0e1428) !important;
-            display: flex !important;
-            border-top: 1px solid #2a3460 !important;
-            flex-shrink: 0 !important;
-            width: 100% !important;
-            height: auto !important;
+        .app-name {
+            font-size: 13px;
+            color: #c0c0c0;
+            font-weight: 600;
+            letter-spacing: 0.3px;
         }
 
-        .p3-footbtn {
-            flex: 1 !important;
-            padding: 12px 8px !important;
-            background: none !important;
-            border: none !important;
-            cursor: pointer !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            gap: 5px !important;
-            color: #8899bb !important;
-            font-family: 'Orbitron', sans-serif !important;
-            font-size: 10px !important;
-            font-weight: 700 !important;
-            letter-spacing: 1.5px !important;
-            text-transform: uppercase !important;
+        /* Colores íconos */
+        .mail     { background: linear-gradient(145deg, #2196f3, #0d6efd); }
+        .chat     { background: linear-gradient(145deg, #2ecc40, #1a9e2e); }
+        .cloud1   { background: linear-gradient(145deg, #7ecef4, #40b0d8); }
+        .cloud2   { background: linear-gradient(145deg, #40b0d8, #1a8fb5); }
+        .shield   { background: linear-gradient(145deg, #222,    #3a3a3a); }
+        .settings { background: linear-gradient(145deg, #999,    #666);    }
+        .maps1    { background: linear-gradient(145deg, #c840c0, #8c1a90); }
+        .maps2    { background: linear-gradient(145deg, #222,    #3a3a3a); }
+        .payment  { background: linear-gradient(145deg, #e83030, #b01818); }
+
+        /* ── FOOTER — igual que las otras páginas ── */
+        .footer {
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            padding: 15px 10px;
+            background-color: rgba(2,11,20,0.85);
+            border-top: 1px solid rgba(0,255,255,0.2);
+            gap: 10px;
+            flex-shrink: 0;
         }
-        .p3-footbtn:hover { color: #fff !important; }
-        #p3-ant { border-right: 1px solid #2a3460 !important; }
+
+        .footer-button {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            background-color: rgba(2,11,20,0.7);
+            border: 1px solid rgba(0,255,255,0.6);
+            border-radius: 20px;
+            color: #87f7f7;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            flex: 1;
+        }
+        .footer-button:hover {
+            background-color: rgba(0,255,255,0.1);
+            border-color: #87f7f7;
+            box-shadow: 0 0 12px rgba(0,255,255,0.5);
+            transform: translateY(-2px);
+        }
+        .footer-button:active { transform: translateY(0); }
 
         /* ── OVERLAY ── */
         #p3-overlay {
-            display: none !important;
-            position: fixed !important;
-            top: 0 !important; left: 0 !important;
-            right: 0 !important; bottom: 0 !important;
-            background: rgba(0,0,0,0.55) !important;
-            align-items: center !important;
-            justify-content: center !important;
-            z-index: 99999 !important;
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.6);
+            align-items: center;
+            justify-content: center;
+            z-index: 99999;
         }
-        #p3-overlay.show { display: flex !important; }
+        #p3-overlay.show { display: flex; }
 
         /* ── ALERT BOX ── */
         #p3-alertbox {
-            background: #fff !important;
-            border-radius: 20px !important;
-            padding: 26px 22px 22px !important;
-            width: 270px !important;
-            text-align: center !important;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.45) !important;
-            position: relative !important;
-            animation: p3pop 0.2s ease !important;
+            background: #fff;
+            border-radius: 20px;
+            padding: 30px 26px 24px;
+            width: 320px;
+            text-align: center;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            position: relative;
+            animation: p3pop 0.2s ease;
         }
         @keyframes p3pop {
             from { transform: scale(0.82); opacity: 0; }
@@ -253,153 +256,176 @@
         }
 
         #p3-closebtn {
-            position: absolute !important;
-            top: -13px !important; right: -13px !important;
-            width: 34px !important; height: 34px !important;
-            border-radius: 50% !important;
-            background: #fff !important;
-            border: 2px solid #222 !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            cursor: pointer !important;
-            font-size: 13px !important;
-            color: #222 !important;
+            position: absolute;
+            top: -14px; right: -14px;
+            width: 36px; height: 36px;
+            border-radius: 50%;
+            background: #fff;
+            border: 2px solid #222;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 14px;
+            color: #222;
         }
+        #p3-closebtn:hover { background: #f0f0f0; }
 
         #p3-iconwrap {
-            width: 80px !important; height: 80px !important;
-            border-radius: 50% !important;
-            margin: 0 auto 14px !important;
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            font-size: 34px !important;
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            margin: 0 auto 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 38px;
         }
 
         #p3-badge {
-            display: inline-block !important;
-            padding: 4px 14px !important;
-            border-radius: 20px !important;
-            font-size: 10px !important;
-            font-weight: 700 !important;
-            letter-spacing: 1.2px !important;
-            text-transform: uppercase !important;
-            margin-bottom: 10px !important;
+            display: inline-block;
+            padding: 5px 16px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1.2px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
         }
-        .p3-balerta { background: #fde9b0 !important; color: #b07800 !important; }
-        .p3-bcaso   { background: #fde0cc !important; color: #b04400 !important; }
-        .p3-btip    { background: #d4f0d4 !important; color: #1a6a1a !important; }
+        .p3-balerta { background: #fde9b0; color: #b07800; }
+        .p3-bcaso   { background: #fde0cc; color: #b04400; }
+        .p3-btip    { background: #d4f0d4; color: #1a6a1a; }
 
         #p3-title {
-            font-size: 15px !important; font-weight: 700 !important;
-            color: #111 !important; margin-bottom: 10px !important;
-            line-height: 1.35 !important;
-            font-family: 'Montserrat', sans-serif !important;
+            font-size: 18px; font-weight: 700;
+            color: #111; margin-bottom: 12px;
+            line-height: 1.35;
+            font-family: 'Montserrat', sans-serif;
         }
         #p3-msg {
-            font-size: 11.5px !important; color: #555 !important;
-            line-height: 1.65 !important; margin-bottom: 20px !important;
-            font-family: 'Montserrat', sans-serif !important;
+            font-size: 13px; color: #555;
+            line-height: 1.65; margin-bottom: 22px;
+            font-family: 'Montserrat', sans-serif;
         }
         #p3-cta {
-            width: 100% !important; padding: 12px 10px !important;
-            border: none !important; border-radius: 10px !important;
-            font-family: 'Montserrat', sans-serif !important;
-            font-size: 11px !important; font-weight: 700 !important;
-            letter-spacing: 1px !important; text-transform: uppercase !important;
-            cursor: pointer !important; line-height: 1.5 !important;
+            width: 100%; padding: 14px 10px;
+            border: none; border-radius: 12px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 12px; font-weight: 700;
+            letter-spacing: 1px; text-transform: uppercase;
+            cursor: pointer; line-height: 1.5;
+            transition: opacity 0.2s;
         }
-        .p3-red    { background: #e02020 !important; color: #fff !important; }
-        .p3-orange { background: #f5a623 !important; color: #fff !important; }
-        .p3-green  { background: #2e7d32 !important; color: #fff !important; }
+        #p3-cta:hover { opacity: 0.88; }
+        .p3-red    { background: #e02020; color: #fff; }
+        .p3-orange { background: #f5a623; color: #fff; }
+        .p3-green  { background: #2e7d32; color: #fff; }
+
+        @media (min-width: 1200px) {
+            .container {
+                border: 2px solid rgba(0,255,255,0.3);
+                border-radius: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
-<div id="p3-container">
+<div class="container">
 
     <!-- HEADER -->
-    <header id="p3-header">
-        <div id="p3-statusbar">
+    <header class="header">
+        <div class="status-bar">
             <span id="p3-clock">9:41</span>
-            <div id="p3-statusicons">
+            <div class="status-icons">
                 <i class="fas fa-signal"></i>
                 <i class="fas fa-wifi"></i>
                 <i class="fas fa-battery-full"></i>
             </div>
         </div>
-        <div id="p3-navbar">
-            <button id="p3-hambtn"><i class="fas fa-bars"></i></button>
-
-            <div id="p3-avatar">
-                <!-- SVG con dimensiones forzadas en atributo y style -->
-                <svg viewBox="0 0 60 60"
-                     xmlns="http://www.w3.org/2000/svg"
-                     width="50" height="50"
-                     style="width:50px!important;height:50px!important;min-width:50px!important;max-width:50px!important;display:block!important;">
+        <div class="nav-bar">
+            <button class="hamburger-btn" id="p3-hambtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="p3-avatar">
+                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"
+                     width="80" height="80"
+                     style="width:80px;height:80px;min-width:80px;max-width:80px;display:block;">
                     <circle cx="30" cy="30" r="30" fill="#f0c060"/>
                     <ellipse cx="30" cy="46" rx="18" ry="12" fill="#4a6fa5"/>
                     <circle cx="30" cy="24" r="11" fill="#f5c28a"/>
                     <path d="M19 22Q19 10 30 10Q41 10 41 22Q38 14 30 14Q22 14 19 22Z" fill="#6b3a1f"/>
                 </svg>
             </div>
-
-            <button id="p3-profilebtn"><i class="fas fa-user-circle"></i></button>
+            <button class="profile-btn">
+                <i class="fas fa-user-circle"></i>
+            </button>
         </div>
     </header>
 
     <!-- MAIN -->
-    <main id="p3-main">
-        <div id="p3-grid">
+    <main class="main-content">
 
-            <div class="p3-app" data-key="mail">
-                <div class="p3-icon p3-mail"><i class="fas fa-envelope"></i></div>
-                <span class="p3-label">Mail</span>
+        <div class="section-title">Apps & Seguridad</div>
+
+        <div class="apps-grid">
+
+            <div class="app-item" data-key="mail">
+                <div class="app-icon mail"><i class="fas fa-envelope"></i></div>
+                <span class="app-name">Mail</span>
             </div>
-            <div class="p3-app" data-key="chat">
-                <div class="p3-icon p3-chat"><i class="fas fa-comment-dots"></i></div>
-                <span class="p3-label">Chat</span>
+
+            <div class="app-item" data-key="chat">
+                <div class="app-icon chat"><i class="fas fa-comment-dots"></i></div>
+                <span class="app-name">Chat</span>
             </div>
-            <div class="p3-app" data-key="cloud1">
-                <div class="p3-icon p3-cloud1"><i class="fas fa-cloud"></i></div>
-                <span class="p3-label">Cloud 1</span>
+
+            <div class="app-item" data-key="cloud1">
+                <div class="app-icon cloud1"><i class="fas fa-cloud"></i></div>
+                <span class="app-name">Cloud 1</span>
             </div>
-            <div class="p3-app" data-key="cloud2">
-                <div class="p3-icon p3-cloud2"><i class="fas fa-cloud-upload-alt"></i></div>
-                <span class="p3-label">Cloud 2</span>
+
+            <div class="app-item" data-key="cloud2">
+                <div class="app-icon cloud2"><i class="fas fa-cloud-upload-alt"></i></div>
+                <span class="app-name">Cloud 2</span>
             </div>
-            <div class="p3-app" data-key="shield">
-                <div class="p3-icon p3-shield"><i class="fas fa-shield-alt"></i></div>
-                <span class="p3-label">Shield</span>
+
+            <div class="app-item" data-key="shield">
+                <div class="app-icon shield"><i class="fas fa-shield-alt"></i></div>
+                <span class="app-name">Shield</span>
             </div>
-            <div class="p3-app" data-key="settings">
-                <div class="p3-icon p3-settings"><i class="fas fa-cog"></i></div>
-                <span class="p3-label">Settings</span>
+
+            <div class="app-item" data-key="settings">
+                <div class="app-icon settings"><i class="fas fa-cog"></i></div>
+                <span class="app-name">Settings</span>
             </div>
-            <div class="p3-app" data-key="maps1">
-                <div class="p3-icon p3-maps1"><i class="fas fa-map-marker-alt"></i></div>
-                <span class="p3-label">Maps</span>
+
+            <div class="app-item" data-key="maps1">
+                <div class="app-icon maps1"><i class="fas fa-map-marker-alt"></i></div>
+                <span class="app-name">Maps</span>
             </div>
-            <div class="p3-app" data-key="maps2">
-                <div class="p3-icon p3-maps2"><i class="fas fa-cog"></i></div>
-                <span class="p3-label">Maps</span>
+
+            <div class="app-item" data-key="maps2">
+                <div class="app-icon maps2"><i class="fas fa-cog"></i></div>
+                <span class="app-name">Maps</span>
             </div>
-            <div class="p3-app" data-key="payment">
-                <div class="p3-icon p3-payment"><i class="fas fa-credit-card"></i></div>
-                <span class="p3-label">Payment</span>
+
+            <div class="app-item" data-key="payment">
+                <div class="app-icon payment"><i class="fas fa-credit-card"></i></div>
+                <span class="app-name">Payment</span>
             </div>
 
         </div>
     </main>
 
     <!-- FOOTER -->
-    <footer id="p3-footer">
-        <button class="p3-footbtn" id="p3-ant">
-            <i class="fas fa-chevron-left"></i><span>ANTERIOR</span>
+    <footer class="footer">
+        <button class="footer-button" id="p3-ant">
+            <i class="fas fa-chevron-left"></i>
+            <span>ANTERIOR</span>
         </button>
-        <button class="p3-footbtn" id="p3-sig">
-            <i class="fas fa-chevron-right"></i><span>SIGUIENTE</span>
+        <button class="footer-button" id="p3-sig">
+            <i class="fas fa-chevron-right"></i>
+            <span>SIGUIENTE</span>
         </button>
     </footer>
 
@@ -433,18 +459,18 @@ var P3 = {
 function p3Show(key) {
     var a = P3[key]; if (!a) return;
     var w = document.getElementById('p3-iconwrap');
-    w.style.cssText = 'background:'+a.bg+' !important;';
-    w.innerHTML = '<i class="'+a.icon+'" style="color:'+a.color+';font-size:34px;"></i>';
+    w.style.background = a.bg;
+    w.innerHTML = '<i class="' + a.icon + '" style="color:' + a.color + ';font-size:38px;"></i>';
     var b = document.getElementById('p3-badge');
     b.textContent = a.badge;
     b.className = a.bc;
-    b.setAttribute('id','p3-badge');
+    b.setAttribute('id', 'p3-badge');
     document.getElementById('p3-title').textContent = a.title;
     document.getElementById('p3-msg').textContent = a.msg;
     var c = document.getElementById('p3-cta');
     c.innerHTML = a.cta;
     c.className = a.cc;
-    c.setAttribute('id','p3-cta');
+    c.setAttribute('id', 'p3-cta');
     document.getElementById('p3-overlay').classList.add('show');
 }
 
@@ -454,8 +480,10 @@ function p3Close() {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    document.querySelectorAll('.p3-app').forEach(function(el) {
-        el.addEventListener('click', function() { p3Show(this.getAttribute('data-key')); });
+    document.querySelectorAll('.app-item').forEach(function(el) {
+        el.addEventListener('click', function() {
+            p3Show(this.getAttribute('data-key'));
+        });
     });
 
     document.getElementById('p3-closebtn').addEventListener('click', p3Close);
@@ -469,15 +497,20 @@ document.addEventListener('DOMContentLoaded', function () {
         this.querySelector('i').className = open ? 'fas fa-times' : 'fas fa-bars';
     });
 
-    document.getElementById('p3-ant').addEventListener('click', function() { window.location.href = 'página2.html'; });
-    document.getElementById('p3-sig').addEventListener('click', function() { window.location.href = 'pagina4.html'; });
+    document.getElementById('p3-ant').addEventListener('click', function() {
+        window.location.href = 'pagina2.html';
+    });
+    document.getElementById('p3-sig').addEventListener('click', function() {
+        window.location.href = 'pagina4.html';
+    });
 
     function tick() {
         var n = new Date();
         var el = document.getElementById('p3-clock');
-        if (el) el.textContent = String(n.getHours()).padStart(2,'0')+':'+String(n.getMinutes()).padStart(2,'0');
+        if (el) el.textContent = String(n.getHours()).padStart(2,'0') + ':' + String(n.getMinutes()).padStart(2,'0');
     }
-    tick(); setInterval(tick, 30000);
+    tick();
+    setInterval(tick, 30000);
 });
 </script>
 </body>
