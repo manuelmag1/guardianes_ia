@@ -634,7 +634,7 @@ body {
 
 body { background: #000; display: flex; justify-content: center; font-family: var(--font-main); color: white; min-height: 100vh; }
 
-.container {
+.container.p2 {
     width: 100%; 
     max-width: 375px; 
     height: 812px;
@@ -643,6 +643,10 @@ body { background: #000; display: flex; justify-content: center; font-family: va
     flex-direction: column; 
     overflow: hidden;
     border: 1px solid rgba(255,255,255,0.1);
+}
+/* Alias para que funcione igual sin clase adicional en página 2 */
+.container:not(.p3) {
+    max-width: 430px;
 }
 
 /* HEADER */
