@@ -634,20 +634,6 @@ body {
 
 body { background: #000; display: flex; justify-content: center; font-family: var(--font-main); color: white; min-height: 100vh; }
 
-.container.p2 {
-    width: 100%; 
-    max-width: 375px; 
-    height: 812px;
-    position: relative;
-    display: flex; 
-    flex-direction: column; 
-    overflow: hidden;
-    border: 1px solid rgba(255,255,255,0.1);
-}
-/* Alias para que funcione igual sin clase adicional en página 2 */
-.container:not(.p3) {
-    max-width: 430px;
-}
 
 /* HEADER */
 .header { padding: 10px 15px; }
@@ -1047,12 +1033,12 @@ body.pagina3 {
 
 /* Contenedor del celular página 3 */
 .container.p3 {
-    width: 300px !important;
-    height: 600px !important;
-    min-width: 300px !important;
-    max-width: 300px !important;
-    min-height: 600px !important;
-    max-height: 600px !important;
+    width: 430px !important;
+    height: 932px !important;
+    min-width: 430px !important;
+    max-width: 430px !important;
+    min-height: 932px !important;
+    max-height: 932px !important;
     background: #c8cacc !important;
     border-radius: 40px !important;
     border: 3px solid #2a2d45 !important;
