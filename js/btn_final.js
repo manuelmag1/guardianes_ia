@@ -22,6 +22,27 @@ document.addEventListener("DOMContentLoaded", function() {
         });
     }
 
+    // Compartir por WhatsApp
+    const btnShareText = document.getElementById('btn-share-text');
+    const btnShareIcon = document.getElementById('btn-share-icon');
+
+    function compartirPorWhatsApp() {
+        const info = 'Complete la mision Guardianes de la Identidad y aprendi como usar la IA de forma mas segura.';
+        const enlace = window.location.href;
+        const mensaje = info + ' Mira aqui: ' + enlace;
+        const whatsappUrl = 'https://wa.me/?text=' + encodeURIComponent(mensaje);
+
+        window.open(whatsappUrl, '_blank');
+    }
+
+    if (btnShareText) {
+        btnShareText.addEventListener('click', compartirPorWhatsApp);
+    }
+
+    if (btnShareIcon) {
+        btnShareIcon.addEventListener('click', compartirPorWhatsApp);
+    }
+
 });
 
 document.getElementById('hamburger-btn').addEventListener('click', function() {

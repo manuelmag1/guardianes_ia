@@ -89,8 +89,8 @@
     background-size: cover;
     background-position: center;
     justify-content: flex-start;
-    padding-top: 20px;
-    gap: 20px;
+    padding-top: 80px;
+    gap: 50px;
 }
 
 /* Título de misión */
@@ -121,20 +121,7 @@
     white-space: pre;
 }
 
-/* Capa fucsia que se desplaza a la izquierda */
-.p5-main .mission-title::before {
-    left: 2px;
-    text-shadow: -2px 0 #ff00c1;
-    clip: rect(44px, 450px, 56px, 0);
-    animation: glitch-anim 15s infinite linear alternate-reverse;
-}
 
-/* Capa cyan que se desplaza a la derecha */
-.p5-main .mission-title::after {
-    left: -2px;
-    text-shadow: -2px 0 #00fff9, 2px 2px #ff00c1;
-    animation: glitch-anim2 10s infinite linear alternate-reverse;
-}
 
 /* ---- Zona radial ---- */
 .p5-radial-zone {
