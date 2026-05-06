@@ -20,7 +20,7 @@
     <div class="container">
         <header class="header">
             <div class="status-bar">
-                <div class="time">9:41</div>
+                <div class="time">10:41</div>
                 <div class="status-icon">
                     <i class="fas fa-signal"></i> <i class="fas fa-wifi"></i> <i class="fas fa-battery-full"></i>
                 </div>
@@ -63,21 +63,19 @@
 
             <p class="tagline">Protege tus datos en la era de la IA</p>
 
-            <div class="flow-nav neumorphic-nav">
-                <button class="nav-btn btn-inicio" onclick="location.href='index.html'">
-                    <i class="fas fa-chevron-left"></i> INICIO
-                </button>
-                <button class="nav-btn next btn-siguiente" onclick="location.href='pagina3.html'">
-                    SIGUIENTE <i class="fas fa-chevron-right"></i>
-                </button>
-            </div>
         </main>
 
         <footer class="footer">
-            <button class="footer-button"><img src="src/img_p1/CANDADO.png" class="footer-button-icon"><span>SECURE</span></button>
-            <button class="footer-button"><img src="src/img_p1/IA ICONO.png" class="footer-button-icon"><span>IA INTEL</span></button>
-            <button class="footer-button"><img src="src/img_p1/AYUDA.png" class="footer-button-icon"><span>AYUDA</span></button>
+            <button class="footer-button" onclick="location.href='index.html'">
+                
+                <span class="fas fa-chevron-left"> </span> <span>INICIO</span>
+            </button>
+            <button class="footer-button" onclick="location.href='pagina3.html'">
+                <span class="fas fa-chevron-right"></span><span>SIGUIENTE</span>
+            </button>
         </footer>
+
+
 
         <div id="modal-overlay" class="modal-overlay">
             <div id="modal-1" class="modal-content">
@@ -114,5 +112,6 @@
         </div>
     </div>
     <script src="js/script.js"></script>
+    <script src="js/clock.js"></script>
 </body>
 </html>
