@@ -4,420 +4,95 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guardianes de la Identidad - Página 3</title>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
-        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background-image: url('src/img_p1/FONDO.png');
-            background-color: #020b14;
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #fff;
-            overflow: hidden;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        /* ── CONTENEDOR — mismo tamaño que todas las páginas ── */
-        .container {
-            width: 430px;
-            height: 932px;
-            display: flex;
-            flex-direction: column;
-            position: relative;
-            background-image: url('src/img_p1/FONDO.png');
-            box-shadow: 0 0 30px rgba(72,143,143,0.3);
-            overflow: hidden;
-        }
-
-        /* ── HEADER ── */
-        .header {
-            background: rgba(2,11,20,0.8);
-            border-bottom: 1px solid rgba(0,255,255,0.2);
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            padding: 10px 0;
-        }
-
-        .status-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px 10px 20px;
-            font-size: 14px;
-            font-weight: 600;
-            color: #a0b0b9;
-        }
-
-        .status-icons {
-            display: flex;
-            gap: 6px;
-            align-items: center;
-            font-size: 13px;
-        }
-
-        .nav-bar {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 0 20px;
-        }
-
-        .hamburger-btn {
-            background: none;
-            border: none;
-            color: #c0c0c0;
-            font-size: 24px;
-            cursor: pointer;
-            transition: color 0.3s ease;
-            padding: 5px;
-        }
-        .hamburger-btn:hover {
-            color: #87f7f7;
-            text-shadow: 0 0 10px #87f7f7;
-        }
-
-        /* Avatar — tamaño fijo absoluto */
-        .p3-avatar {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 3px solid #e8a020;
-            overflow: hidden;
-            flex-shrink: 0;
-            display: block;
-        }
-        .p3-avatar svg {
-            width: 80px;
-            height: 80px;
-            display: block;
-        }
-
-        .profile-btn {
-            background: none;
-            border: none;
-            color: #888;
-            font-size: 28px;
-            cursor: pointer;
-        }
-
-        /* ── MAIN ── */
-        .main-content {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 30px 20px;
-            overflow-y: auto;
-        }
-
-        /* ── TÍTULO ── */
-        .section-title {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 20px;
-            font-weight: 700;
-            color: #87f7f7;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            text-shadow: 0 0 10px #87f7f7;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-
-        /* ── GRID DE APPS ── */
-        .apps-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 24px 20px;
-            width: 100%;
-            max-width: 380px;
-        }
-
-        .app-item {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 8px;
-            cursor: pointer;
-        }
-        .app-item:active .app-icon { transform: scale(0.88); }
-
-        .app-icon {
-            width: 90px;
-            height: 90px;
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 36px;
-            color: #fff;
-            box-shadow: 0 6px 16px rgba(0,0,0,0.4);
-            transition: transform 0.15s, box-shadow 0.2s;
-        }
-        .app-item:hover .app-icon {
-            box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-            transform: translateY(-2px);
-        }
-
-        .app-name {
-            font-size: 13px;
-            color: #c0c0c0;
-            font-weight: 600;
-            letter-spacing: 0.3px;
-        }
-
-        /* Colores íconos */
-        .mail     { background: linear-gradient(145deg, #2196f3, #0d6efd); }
-        .chat     { background: linear-gradient(145deg, #2ecc40, #1a9e2e); }
-        .cloud1   { background: linear-gradient(145deg, #7ecef4, #40b0d8); }
-        .cloud2   { background: linear-gradient(145deg, #40b0d8, #1a8fb5); }
-        .shield   { background: linear-gradient(145deg, #222,    #3a3a3a); }
-        .settings { background: linear-gradient(145deg, #999,    #666);    }
-        .maps1    { background: linear-gradient(145deg, #c840c0, #8c1a90); }
-        .maps2    { background: linear-gradient(145deg, #222,    #3a3a3a); }
-        .payment  { background: linear-gradient(145deg, #e83030, #b01818); }
-
-        /* ── FOOTER — igual que las otras páginas ── */
-        .footer {
-            display: flex;
-            justify-content: space-evenly;
-            align-items: center;
-            padding: 15px 10px;
-            background-color: rgba(2,11,20,0.85);
-            border-top: 1px solid rgba(0,255,255,0.2);
-            gap: 10px;
-            flex-shrink: 0;
-        }
-
-        .footer-button {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            padding: 12px 24px;
-            background-color: rgba(2,11,20,0.7);
-            border: 1px solid rgba(0,255,255,0.6);
-            border-radius: 20px;
-            color: #87f7f7;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 13px;
-            font-weight: 600;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            letter-spacing: 0.5px;
-            flex: 1;
-        }
-        .footer-button:hover {
-            background-color: rgba(0,255,255,0.1);
-            border-color: #87f7f7;
-            box-shadow: 0 0 12px rgba(0,255,255,0.5);
-            transform: translateY(-2px);
-        }
-        .footer-button:active { transform: translateY(0); }
-
-        /* ── OVERLAY ── */
-        #p3-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.6);
-            align-items: center;
-            justify-content: center;
-            z-index: 99999;
-        }
-        #p3-overlay.show { display: flex; }
-
-        /* ── ALERT BOX ── */
-        #p3-alertbox {
-            background: #fff;
-            border-radius: 20px;
-            padding: 30px 26px 24px;
-            width: 320px;
-            text-align: center;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-            position: relative;
-            animation: p3pop 0.2s ease;
-        }
-        @keyframes p3pop {
-            from { transform: scale(0.82); opacity: 0; }
-            to   { transform: scale(1);   opacity: 1; }
-        }
-
-        #p3-closebtn {
-            position: absolute;
-            top: -14px; right: -14px;
-            width: 36px; height: 36px;
-            border-radius: 50%;
-            background: #fff;
-            border: 2px solid #222;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            font-size: 14px;
-            color: #222;
-        }
-        #p3-closebtn:hover { background: #f0f0f0; }
-
-        #p3-iconwrap {
-            width: 90px; height: 90px;
-            border-radius: 50%;
-            margin: 0 auto 16px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 38px;
-        }
-
-        #p3-badge {
-            display: inline-block;
-            padding: 5px 16px;
-            border-radius: 20px;
-            font-size: 11px;
-            font-weight: 700;
-            letter-spacing: 1.2px;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-        .p3-balerta { background: #fde9b0; color: #b07800; }
-        .p3-bcaso   { background: #fde0cc; color: #b04400; }
-        .p3-btip    { background: #d4f0d4; color: #1a6a1a; }
-
-        #p3-title {
-            font-size: 18px; font-weight: 700;
-            color: #111; margin-bottom: 12px;
-            line-height: 1.35;
-            font-family: 'Montserrat', sans-serif;
-        }
-        #p3-msg {
-            font-size: 13px; color: #555;
-            line-height: 1.65; margin-bottom: 22px;
-            font-family: 'Montserrat', sans-serif;
-        }
-        #p3-cta {
-            width: 100%; padding: 14px 10px;
-            border: none; border-radius: 12px;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 12px; font-weight: 700;
-            letter-spacing: 1px; text-transform: uppercase;
-            cursor: pointer; line-height: 1.5;
-            transition: opacity 0.2s;
-        }
-        #p3-cta:hover { opacity: 0.88; }
-        .p3-red    { background: #e02020; color: #fff; }
-        .p3-orange { background: #f5a623; color: #fff; }
-        .p3-green  { background: #2e7d32; color: #fff; }
-
-        @media (min-width: 1200px) {
-            .container {
-                border: 2px solid rgba(0,255,255,0.3);
-                border-radius: 20px;
-            }
-        }
-    </style>
+    <!-- CSS global del proyecto -->
+    <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
 
 <div class="container">
 
-    <!-- HEADER -->
+    <!-- =============== HEADER =============== -->
     <header class="header">
         <div class="status-bar">
-            <span id="p3-clock">9:41</span>
+            <div class="time" id="p3-clock">9:41</div>
             <div class="status-icons">
                 <i class="fas fa-signal"></i>
                 <i class="fas fa-wifi"></i>
                 <i class="fas fa-battery-full"></i>
             </div>
         </div>
-        <div class="nav-bar">
-            <button class="hamburger-btn" id="p3-hambtn">
-                <i class="fas fa-bars"></i>
-            </button>
-            <div class="p3-avatar">
-                <svg viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"
-                     width="80" height="80"
-                     style="width:80px;height:80px;min-width:80px;max-width:80px;display:block;">
-                    <circle cx="30" cy="30" r="30" fill="#f0c060"/>
-                    <ellipse cx="30" cy="46" rx="18" ry="12" fill="#4a6fa5"/>
-                    <circle cx="30" cy="24" r="11" fill="#f5c28a"/>
-                    <path d="M19 22Q19 10 30 10Q41 10 41 22Q38 14 30 14Q22 14 19 22Z" fill="#6b3a1f"/>
-                </svg>
-            </div>
-            <button class="profile-btn">
-                <i class="fas fa-user-circle"></i>
-            </button>
-        </div>
+        <button class="hamburger-btn" id="p3-hambtn">
+            <i class="fas fa-bars"></i>
+        </button>
     </header>
 
-    <!-- MAIN -->
-    <main class="main-content">
+    <!-- =============== MAIN CONTENT =============== -->
+    <main class="main-content" style="justify-content:flex-start; padding:20px; gap:16px; align-items:stretch;">
 
-        <div class="section-title">Apps & Seguridad</div>
+        <!-- Título igual al estilo del proyecto -->
+        <h1 class="title-p2" style="font-size:18px; margin-bottom:4px;">
+            APPS & SEGURIDAD<br>
+            <span>Toca cada app para conocer sus riesgos</span>
+        </h1>
 
-        <div class="apps-grid">
+        <!-- Grid de apps -->
+        <div class="p3-grid">
 
-            <div class="app-item" data-key="mail">
-                <div class="app-icon mail"><i class="fas fa-envelope"></i></div>
-                <span class="app-name">Mail</span>
+            <div class="p3-app" data-key="mail">
+                <div class="p3-icon p3-mail"><i class="fas fa-envelope"></i></div>
+                <span class="p3-label">Mail</span>
             </div>
 
-            <div class="app-item" data-key="chat">
-                <div class="app-icon chat"><i class="fas fa-comment-dots"></i></div>
-                <span class="app-name">Chat</span>
+            <div class="p3-app" data-key="chat">
+                <div class="p3-icon p3-chat"><i class="fas fa-comment-dots"></i></div>
+                <span class="p3-label">Chat</span>
             </div>
 
-            <div class="app-item" data-key="cloud1">
-                <div class="app-icon cloud1"><i class="fas fa-cloud"></i></div>
-                <span class="app-name">Cloud 1</span>
+            <div class="p3-app" data-key="cloud1">
+                <div class="p3-icon p3-cloud1"><i class="fas fa-cloud"></i></div>
+                <span class="p3-label">Cloud 1</span>
             </div>
 
-            <div class="app-item" data-key="cloud2">
-                <div class="app-icon cloud2"><i class="fas fa-cloud-upload-alt"></i></div>
-                <span class="app-name">Cloud 2</span>
+            <div class="p3-app" data-key="cloud2">
+                <div class="p3-icon p3-cloud2"><i class="fas fa-cloud-upload-alt"></i></div>
+                <span class="p3-label">Cloud 2</span>
             </div>
 
-            <div class="app-item" data-key="shield">
-                <div class="app-icon shield"><i class="fas fa-shield-alt"></i></div>
-                <span class="app-name">Shield</span>
+            <div class="p3-app" data-key="shield">
+                <div class="p3-icon p3-shield"><i class="fas fa-shield-alt"></i></div>
+                <span class="p3-label">Shield</span>
             </div>
 
-            <div class="app-item" data-key="settings">
-                <div class="app-icon settings"><i class="fas fa-cog"></i></div>
-                <span class="app-name">Settings</span>
+            <div class="p3-app" data-key="settings">
+                <div class="p3-icon p3-settings"><i class="fas fa-cog"></i></div>
+                <span class="p3-label">Settings</span>
             </div>
 
-            <div class="app-item" data-key="maps1">
-                <div class="app-icon maps1"><i class="fas fa-map-marker-alt"></i></div>
-                <span class="app-name">Maps</span>
+            <div class="p3-app" data-key="maps1">
+                <div class="p3-icon p3-maps1"><i class="fas fa-map-marker-alt"></i></div>
+                <span class="p3-label">Maps</span>
             </div>
 
-            <div class="app-item" data-key="maps2">
-                <div class="app-icon maps2"><i class="fas fa-cog"></i></div>
-                <span class="app-name">Maps</span>
+            <div class="p3-app" data-key="maps2">
+                <div class="p3-icon p3-maps2"><i class="fas fa-cog"></i></div>
+                <span class="p3-label">Maps</span>
             </div>
 
-            <div class="app-item" data-key="payment">
-                <div class="app-icon payment"><i class="fas fa-credit-card"></i></div>
-                <span class="app-name">Payment</span>
+            <div class="p3-app" data-key="payment">
+                <div class="p3-icon p3-payment"><i class="fas fa-credit-card"></i></div>
+                <span class="p3-label">Payment</span>
             </div>
 
         </div>
     </main>
 
-    <!-- FOOTER -->
+    <!-- =============== FOOTER =============== -->
     <footer class="footer">
         <button class="footer-button" id="p3-ant">
             <i class="fas fa-chevron-left"></i>
@@ -431,7 +106,7 @@
 
 </div>
 
-<!-- MODAL -->
+<!-- =============== MODAL =============== -->
 <div id="p3-overlay">
     <div id="p3-alertbox">
         <button id="p3-closebtn"><i class="fas fa-times"></i></button>
@@ -443,34 +118,176 @@
     </div>
 </div>
 
+<!-- Estilos exclusivos página 3 — usan clases únicas para no interferir -->
+<style>
+    /* Grid de apps */
+    .p3-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px 16px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .p3-app {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        cursor: pointer;
+    }
+    .p3-app:active .p3-icon { transform: scale(0.88); }
+    .p3-app:hover .p3-icon  { box-shadow: 0 8px 20px rgba(0,0,0,0.5); transform: translateY(-2px); }
+
+    .p3-icon {
+        width: 80px;
+        height: 80px;
+        border-radius: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        color: #fff;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+        transition: transform 0.15s, box-shadow 0.2s;
+    }
+
+    .p3-label {
+        font-size: 11px;
+        color: #c0c0c0;
+        font-weight: 600;
+        font-family: 'Montserrat', sans-serif;
+        letter-spacing: 0.3px;
+    }
+
+    /* Colores de íconos */
+    .p3-mail     { background: linear-gradient(145deg, #2196f3, #0d6efd); }
+    .p3-chat     { background: linear-gradient(145deg, #2ecc40, #1a9e2e); }
+    .p3-cloud1   { background: linear-gradient(145deg, #7ecef4, #40b0d8); }
+    .p3-cloud2   { background: linear-gradient(145deg, #40b0d8, #1a8fb5); }
+    .p3-shield   { background: linear-gradient(145deg, #222,    #3a3a3a); }
+    .p3-settings { background: linear-gradient(145deg, #888,    #555);    }
+    .p3-maps1    { background: linear-gradient(145deg, #c840c0, #8c1a90); }
+    .p3-maps2    { background: linear-gradient(145deg, #333,    #1a1a1a); }
+    .p3-payment  { background: linear-gradient(145deg, #e83030, #b01818); }
+
+    /* Modal overlay */
+    #p3-overlay {
+        display: none;
+        position: fixed;
+        inset: 0;
+        background: rgba(0,0,0,0.65);
+        align-items: center;
+        justify-content: center;
+        z-index: 99999;
+    }
+    #p3-overlay.show { display: flex; }
+
+    /* Alert box */
+    #p3-alertbox {
+        background: #fff;
+        border-radius: 20px;
+        padding: 28px 24px 22px;
+        width: 300px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+        position: relative;
+        animation: p3pop 0.2s ease;
+    }
+    @keyframes p3pop {
+        from { transform: scale(0.82); opacity: 0; }
+        to   { transform: scale(1);    opacity: 1; }
+    }
+
+    #p3-closebtn {
+        position: absolute;
+        top: -14px; right: -14px;
+        width: 34px; height: 34px;
+        border-radius: 50%;
+        background: #fff;
+        border: 2px solid #222;
+        display: flex; align-items: center; justify-content: center;
+        cursor: pointer;
+        font-size: 13px; color: #222;
+    }
+    #p3-closebtn:hover { background: #f0f0f0; }
+
+    #p3-iconwrap {
+        width: 82px; height: 82px;
+        border-radius: 50%;
+        margin: 0 auto 14px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 36px;
+    }
+
+    #p3-badge {
+        display: inline-block;
+        padding: 4px 14px;
+        border-radius: 20px;
+        font-size: 10px; font-weight: 700;
+        letter-spacing: 1.2px;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .p3-balerta { background: #fde9b0; color: #b07800; }
+    .p3-bcaso   { background: #fde0cc; color: #b04400; }
+    .p3-btip    { background: #d4f0d4; color: #1a6a1a; }
+
+    #p3-title {
+        font-size: 16px; font-weight: 700;
+        color: #111; margin-bottom: 10px; line-height: 1.35;
+        font-family: 'Montserrat', sans-serif;
+    }
+    #p3-msg {
+        font-size: 12.5px; color: #555;
+        line-height: 1.65; margin-bottom: 20px;
+        font-family: 'Montserrat', sans-serif;
+    }
+    #p3-cta {
+        width: 100%; padding: 13px 10px;
+        border: none; border-radius: 10px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 11px; font-weight: 700;
+        letter-spacing: 1px; text-transform: uppercase;
+        cursor: pointer; line-height: 1.5;
+        transition: opacity 0.2s;
+    }
+    #p3-cta:hover { opacity: 0.88; }
+    .p3-red    { background: #e02020; color: #fff; }
+    .p3-orange { background: #f5a623; color: #fff; }
+    .p3-green  { background: #2e7d32; color: #fff; }
+</style>
+
+<!-- =============== JAVASCRIPT =============== -->
 <script>
 var P3 = {
-    mail:     { icon:'fas fa-envelope',        bg:'#ddeeff', color:'#1a6aaa', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'El correo te puede traicionar',      msg:'El 90% de los ataques cibernéticos empiezan con un correo falso. Un clic en el lugar equivocado puede entregar tus datos sin que te des cuenta.',        cta:'NUNCA ABRAS<br>LINKS SOSPECHOSOS',       cc:'p3-red'    },
-    chat:     { icon:'fas fa-comment-dots',     bg:'#e8f5e9', color:'#1a7a2a', badge:'📋 CASO REAL',  bc:'p3-bcaso',   title:'Tus chats no son privados',          msg:'Una estudiante compartió su número en un chat grupal. Días después recibió mensajes de extraños haciéndose pasar por su colegio.',                    cta:'TODO EMPEZÓ<br>CON UN MENSAJE',          cc:'p3-orange' },
-    cloud1:   { icon:'fas fa-cloud',            bg:'#ddeeff', color:'#1a7aaa', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'Tu nube puede tener filtraciones',    msg:'Si usas la misma contraseña en varias apps, un hacker puede acceder a todos tus archivos en la nube de una sola vez.',                                  cta:'USA CONTRASEÑAS<br>ÚNICAS',              cc:'p3-red'    },
-    cloud2:   { icon:'fas fa-cloud-upload-alt', bg:'#ddeeff', color:'#1a7aaa', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'Permisos que no notaste',            msg:'¿Le diste acceso a tus fotos, contactos y micrófono sin leer? Muchas apps guardan esa información aunque no las estés usando.',                         cta:'REVISA TUS<br>PERMISOS HOY',             cc:'p3-orange' },
-    shield:   { icon:'fas fa-shield-alt',       bg:'#e8f5e9', color:'#1a6a1a', badge:'💡 TIP RÁPIDO', bc:'p3-btip',    title:'Activa tu escudo digital',           msg:'La verificación en dos pasos bloquea el 99% de los accesos no autorizados. Incluso si alguien roba tu contraseña, no podrá entrar.',                  cta:'ACTÍVALA EN TUS<br>APPS AHORA',          cc:'p3-green'  },
-    settings: { icon:'fas fa-cog',              bg:'#e0e0e0', color:'#444444', badge:'💡 TIP RÁPIDO', bc:'p3-btip',    title:'Configurar es protegerte',           msg:'Las apps actualizadas corrigen vulnerabilidades. Una app sin actualizar es como dejar la puerta de tu casa abierta de noche.',                          cta:'MANTÉN TUS APPS<br>ACTUALIZADAS',        cc:'p3-green'  },
-    maps1:    { icon:'fas fa-map-marker-alt',   bg:'#ede8f5', color:'#6a1a8a', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'Saben dónde estás',                 msg:'Las apps de mapas pueden compartir tu ubicación en tiempo real con terceros. ¿Sabes quién tiene acceso a dónde estás ahora?',                         cta:'DESACTIVA LA<br>UBICACIÓN AL SALIR',     cc:'p3-red'    },
-    maps2:    { icon:'fas fa-cog',              bg:'#e0e0e0', color:'#444444', badge:'📋 CASO REAL',  bc:'p3-bcaso',   title:'Una app que lo controlaba todo',     msg:"Un joven instaló una app de 'optimización'. Recopilaba sus contraseñas, fotos y mensajes en segundo plano sin que lo supiera.",                       cta:'INSTALA SOLO<br>APPS OFICIALES',         cc:'p3-orange' },
-    payment:  { icon:'fas fa-credit-card',      bg:'#fde8e8', color:'#aa1a1a', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'Tu tarjeta en riesgo',               msg:'Guardar datos bancarios en apps desconocidas es como prestarle tu tarjeta a un extraño. Un fallo de seguridad y pierdes tu dinero.',                    cta:'NUNCA GUARDES DATOS<br>EN APPS DUDOSAS', cc:'p3-red'    }
+    mail:     { icon:'fas fa-envelope',        bg:'#ddeeff', color:'#1a6aaa', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'El correo te puede traicionar',   msg:'El 90% de los ataques cibernéticos empiezan con un correo falso. Un clic en el lugar equivocado puede entregar tus datos sin que te des cuenta.',        cta:'NUNCA ABRAS<br>LINKS SOSPECHOSOS',       cc:'p3-red'    },
+    chat:     { icon:'fas fa-comment-dots',     bg:'#e8f5e9', color:'#1a7a2a', badge:'📋 CASO REAL',  bc:'p3-bcaso',   title:'Tus chats no son privados',        msg:'Una estudiante compartió su número en un chat grupal. Días después recibió mensajes de extraños haciéndose pasar por su colegio.',                    cta:'TODO EMPEZÓ<br>CON UN MENSAJE',          cc:'p3-orange' },
+    cloud1:   { icon:'fas fa-cloud',            bg:'#ddeeff', color:'#1a7aaa', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'Tu nube puede tener filtraciones', msg:'Si usas la misma contraseña en varias apps, un hacker puede acceder a todos tus archivos en la nube de una sola vez.',                                  cta:'USA CONTRASEÑAS<br>ÚNICAS',              cc:'p3-red'    },
+    cloud2:   { icon:'fas fa-cloud-upload-alt', bg:'#ddeeff', color:'#1a7aaa', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'Permisos que no notaste',          msg:'¿Le diste acceso a tus fotos, contactos y micrófono sin leer? Muchas apps guardan esa información aunque no las estés usando.',                         cta:'REVISA TUS<br>PERMISOS HOY',             cc:'p3-orange' },
+    shield:   { icon:'fas fa-shield-alt',       bg:'#e8f5e9', color:'#1a6a1a', badge:'💡 TIP RÁPIDO', bc:'p3-btip',    title:'Activa tu escudo digital',         msg:'La verificación en dos pasos bloquea el 99% de los accesos no autorizados. Incluso si alguien roba tu contraseña, no podrá entrar.',                  cta:'ACTÍVALA EN TUS<br>APPS AHORA',          cc:'p3-green'  },
+    settings: { icon:'fas fa-cog',              bg:'#e0e0e0', color:'#444444', badge:'💡 TIP RÁPIDO', bc:'p3-btip',    title:'Configurar es protegerte',         msg:'Las apps actualizadas corrigen vulnerabilidades. Una app sin actualizar es como dejar la puerta de tu casa abierta de noche.',                          cta:'MANTÉN TUS APPS<br>ACTUALIZADAS',        cc:'p3-green'  },
+    maps1:    { icon:'fas fa-map-marker-alt',   bg:'#ede8f5', color:'#6a1a8a', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'Saben dónde estás',                msg:'Las apps de mapas pueden compartir tu ubicación en tiempo real con terceros. ¿Sabes quién tiene acceso a dónde estás ahora?',                         cta:'DESACTIVA LA<br>UBICACIÓN AL SALIR',     cc:'p3-red'    },
+    maps2:    { icon:'fas fa-cog',              bg:'#e0e0e0', color:'#444444', badge:'📋 CASO REAL',  bc:'p3-bcaso',   title:'Una app que lo controlaba todo',   msg:"Un joven instaló una app de 'optimización'. Recopilaba sus contraseñas, fotos y mensajes en segundo plano sin que lo supiera.",                       cta:'INSTALA SOLO<br>APPS OFICIALES',         cc:'p3-orange' },
+    payment:  { icon:'fas fa-credit-card',      bg:'#fde8e8', color:'#aa1a1a', badge:'⚠ ALERTA',     bc:'p3-balerta', title:'Tu tarjeta en riesgo',             msg:'Guardar datos bancarios en apps desconocidas es como prestarle tu tarjeta a un extraño. Un fallo de seguridad y pierdes tu dinero.',                    cta:'NUNCA GUARDES DATOS<br>EN APPS DUDOSAS', cc:'p3-red'    }
 };
 
 function p3Show(key) {
     var a = P3[key]; if (!a) return;
     var w = document.getElementById('p3-iconwrap');
     w.style.background = a.bg;
-    w.innerHTML = '<i class="' + a.icon + '" style="color:' + a.color + ';font-size:38px;"></i>';
+    w.innerHTML = '<i class="' + a.icon + '" style="color:' + a.color + ';font-size:36px;"></i>';
     var b = document.getElementById('p3-badge');
     b.textContent = a.badge;
     b.className = a.bc;
-    b.setAttribute('id', 'p3-badge');
+    b.setAttribute('id','p3-badge');
     document.getElementById('p3-title').textContent = a.title;
     document.getElementById('p3-msg').textContent = a.msg;
     var c = document.getElementById('p3-cta');
     c.innerHTML = a.cta;
     c.className = a.cc;
-    c.setAttribute('id', 'p3-cta');
+    c.setAttribute('id','p3-cta');
     document.getElementById('p3-overlay').classList.add('show');
 }
 
@@ -480,7 +297,7 @@ function p3Close() {
 
 document.addEventListener('DOMContentLoaded', function () {
 
-    document.querySelectorAll('.app-item').forEach(function(el) {
+    document.querySelectorAll('.p3-app').forEach(function(el) {
         el.addEventListener('click', function() {
             p3Show(this.getAttribute('data-key'));
         });
