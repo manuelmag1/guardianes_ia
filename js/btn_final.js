@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     function compartirPorWhatsApp() {
         const info = 'Complete la mision Guardianes de la Identidad y aprendi como usar la IA de forma mas segura.';
-        const enlace = window.location.href;
+        const enlace = 'https://manuelmag1.github.io/guardianes_ia/index.html';
         const mensaje = info + ' Mira aqui: ' + enlace;
         const whatsappUrl = 'https://wa.me/?text=' + encodeURIComponent(mensaje);
 
